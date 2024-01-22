@@ -1,5 +1,5 @@
 {
-  "name": "trade-tiger",
+  "name": "stardew-tiger",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -12,14 +12,10 @@
     "axios": "^1.4.0",
     "dayjs": "^1.11.7",
     "js-cookie": "^3.0.5",
-    "p-throttle": "^5.1.0",
     "pinia": "^2.0.23",
-    "plotly.js-dist": "^2.27.1",
-    "roboto-fontface": "*",
     "uuid": "^9.0.1",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
-    "vue3-plotly": "^0.0.7",
     "vuetify": "^3.0.0",
     "webfontloader": "^1.0.0"
   },
