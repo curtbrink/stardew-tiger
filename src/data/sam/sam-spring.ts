@@ -1,4 +1,5 @@
 import { Schedule } from '@/data/types';
+import { validateSeasonalLevelSchedules } from '@/data/validation';
 
 const samSpring: Schedule[] = [
   {
@@ -162,7 +163,7 @@ const samSpring: Schedule[] = [
         desc: 'Home, in his room',
       },
       {
-        time: '11:00',
+        time: '11:00 AM',
         desc: 'At the Museum',
       },
       {
@@ -199,7 +200,7 @@ const samSpring: Schedule[] = [
         desc: 'Home, in his room',
       },
       {
-        time: '11:00',
+        time: '11:00 AM',
         desc: 'At the Museum',
       },
       {
@@ -230,7 +231,7 @@ const samSpring: Schedule[] = [
         desc: 'Home, in his room',
       },
       {
-        time: '11:00',
+        time: '11:00 AM',
         desc: 'At JojaMart, working',
       },
       {
@@ -261,7 +262,7 @@ const samSpring: Schedule[] = [
         desc: 'Home, in his room',
       },
       {
-        time: '11:00',
+        time: '11:00 AM',
         desc: 'At JojaMart, working',
       },
       {
@@ -424,4 +425,6 @@ const samSpring: Schedule[] = [
     ],
   },
 ];
+
+validateSeasonalLevelSchedules(samSpring);
 export default samSpring;

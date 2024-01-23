@@ -15,10 +15,10 @@
     </v-card-text>
     <v-card-actions>
       <v-container>
-        <v-row>
+        <v-row no-gutters>
           <v-col cols="12" v-for="(item, idx) in data.options?.flags ?? []" :key="idx">
-            <v-text-field v-if="item.type === 'text'" :label="item.name" v-model="stateStore.flags[item.name]"></v-text-field>
-            <v-checkbox v-if="item.type === 'checkbox'" :label="item.name" v-model="stateStore.flags[item.name]"></v-checkbox>
+            <v-text-field density="compact" v-if="item.type === 'text'" :label="item.name" v-model="stateStore.flags[item.name]"></v-text-field>
+            <v-checkbox density="compact" v-if="item.type === 'checkbox'" :label="item.name" v-model="stateStore.flags[item.name]"></v-checkbox>
           </v-col>
         </v-row>
       </v-container>

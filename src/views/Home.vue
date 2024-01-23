@@ -32,7 +32,21 @@ const villagers = [
     name: 'sam',
     prettyName: 'Sam',
     options: {
-      flags: [{ name: 'communityCenterRestored', type: 'checkbox' }],
+      flags: [
+        { name: 'samRelationship', type: 'text' },
+        { name: 'pennyRelationship', type: 'text' },
+        { name: 'communityCenterRestored', type: 'checkbox' },
+      ],
+    },
+  },
+  {
+    name: 'sebastian',
+    prettyName: 'Sebastian',
+    options: {
+      flags: [
+        { name: 'sebastianRelationship', type: 'text' },
+        { name: 'railroadOpen', type: 'checkbox' },
+      ],
     },
   },
 ];

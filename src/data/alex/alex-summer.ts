@@ -1,4 +1,5 @@
 import { Schedule } from '@/data/types';
+import { validateSeasonalLevelSchedules } from '@/data/validation';
 
 const alexSummer: Schedule[] = [
   {
@@ -166,4 +167,6 @@ const alexSummer: Schedule[] = [
     ]
   },
 ];
+
+validateSeasonalLevelSchedules(alexSummer);
 export default alexSummer;

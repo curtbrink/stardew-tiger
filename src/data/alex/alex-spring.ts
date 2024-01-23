@@ -1,4 +1,5 @@
 import { Schedule } from '@/data/types';
+import { validateSeasonalLevelSchedules } from '@/data/validation';
 
 const alexSpring: Schedule[] = [
   {
@@ -129,4 +130,6 @@ const alexSpring: Schedule[] = [
     ]
   },
 ];
+
+validateSeasonalLevelSchedules(alexSpring);
 export default alexSpring;

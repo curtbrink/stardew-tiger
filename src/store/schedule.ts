@@ -11,14 +11,14 @@ export const useScheduleStore = defineStore('schedule', {
   getters: {
     getCurrentScheduleStepForVillager(state) {
       return (villagerId: string) => {
-        console.log('finding scheddy for ' + villagerId);
-        console.log('total schedules: ' + this.allSchedules.length);
+        // console.log('finding scheddy for ' + villagerId);
+        // console.log('total schedules: ' + this.allSchedules.length);
         const stateStore = useGlobalGameStateStore();
         const scheduleFilter = stateStore.marriedTo === villagerId
           ? (s: Schedule) => (s.villager === villagerId && s.type === 'marriage')
           : (s: Schedule) => (s.villager === villagerId && s.type === 'seasonal' && s.season === stateStore.season);
         const villagerSchedules = state.allSchedules.filter(scheduleFilter);
-        console.log('filtered by season and marriage down to ' + villagerSchedules.length + ' schedules to check');
+        // console.log('filtered by season and marriage down to ' + villagerSchedules.length + ' schedules to check');
         // iterate schedules until one matches
         let i = 0;
         let matchedSchedule;
@@ -79,7 +79,7 @@ export const useScheduleStore = defineStore('schedule', {
           }
           if (allPass) {
             matchedSchedule = schedToCheck;
-            console.log('matched schedule: "' + matchedSchedule.desc + '"');
+            // console.log('matched schedule: "' + matchedSchedule.desc + '"');
           }
           i++;
         }

@@ -6,8 +6,11 @@ import browserStorageService from '@/services/browser-storage.service';
 type Flags = {
   [key: string]: number | boolean,
   communityCenterRestored: boolean,
+  railroadOpen: boolean,
   haleyRelationship: number,
   leahRelationship: number,
+  pennyRelationship: number,
+  samRelationship: number,
 }
 
 type GameState = {
@@ -34,8 +37,11 @@ export const useGlobalGameStateStore = defineStore('globalState', {
     marriedTo: 'single',
     flags: {
       communityCenterRestored: false,
+      railroadOpen: false,
       haleyRelationship: 0,
       leahRelationship: 0,
+      pennyRelationship: 0,
+      samRelationship: 0,
     } as Flags,
   } as GameState),
   getters: {

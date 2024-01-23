@@ -1,4 +1,5 @@
 import { Schedule } from '@/data/types';
+import { validateSeasonalLevelSchedules } from '@/data/validation';
 
 const elliottSpring: Schedule[] = [
   {
@@ -147,4 +148,6 @@ const elliottSpring: Schedule[] = [
     ],
   },
 ];
+
+validateSeasonalLevelSchedules(elliottSpring);
 export default elliottSpring;

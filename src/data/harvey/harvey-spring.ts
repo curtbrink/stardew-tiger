@@ -1,4 +1,5 @@
 import { Schedule } from '@/data/types';
+import { validateSeasonalLevelSchedules } from '@/data/validation';
 
 const harveySpring: Schedule[] = [
   {
@@ -192,4 +193,6 @@ const harveySpring: Schedule[] = [
     ],
   },
 ];
+
+validateSeasonalLevelSchedules(harveySpring);
 export default harveySpring;
