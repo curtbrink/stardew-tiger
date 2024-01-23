@@ -12,6 +12,7 @@ import VillagerCard from '@/components/villager-card.vue';
 const flagOptions = {
   communityCenterRestored: { name: 'communityCenterRestored', pretty: 'CC restored?', type: 'checkbox' },
   railroadOpen: { name: 'railroadOpen', pretty: 'Railroad open?', type: 'checkbox' },
+  alexRelationship: { name: 'alexRelationship', pretty: 'Alex hearts', type: 'text' },
   haleyRelationship: { name: 'haleyRelationship', pretty: 'Haley hearts', type: 'text' },
   leahRelationship: { name: 'leahRelationship', pretty: 'Leah hearts', type: 'text' },
   pennyRelationship: { name: 'pennyRelationship', pretty: 'Penny hearts', type: 'text' },
@@ -43,6 +44,13 @@ const villagers = [
     prettyName: 'Emily',
     options: {
       flags: [flagOptions.communityCenterRestored],
+    },
+  },
+  {
+    name: 'haley',
+    prettyName: 'Haley',
+    options: {
+      flags: [flagOptions.alexRelationship],
     },
   },
   {
