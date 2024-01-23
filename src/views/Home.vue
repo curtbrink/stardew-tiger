@@ -10,13 +10,13 @@
 import VillagerCard from '@/components/villager-card.vue';
 
 const flagOptions = {
-  communityCenterRestored: { name: 'communityCenterRestored', type: 'checkbox' },
-  railroadOpen: { name: 'railroadOpen', type: 'checkbox' },
-  haleyRelationship: { name: 'haleyRelationship', type: 'text' },
-  leahRelationship: { name: 'leahRelationship', type: 'text' },
-  pennyRelationship: { name: 'pennyRelationship', type: 'text' },
-  samRelationship: { name: 'samRelationship', type: 'text' },
-  sebastianRelationship: { name: 'sebastianRelationship', type: 'text' },
+  communityCenterRestored: { name: 'communityCenterRestored', pretty: 'CC restored?', type: 'checkbox' },
+  railroadOpen: { name: 'railroadOpen', pretty: 'Railroad open?', type: 'checkbox' },
+  haleyRelationship: { name: 'haleyRelationship', pretty: 'Haley hearts', type: 'text' },
+  leahRelationship: { name: 'leahRelationship', pretty: 'Leah hearts', type: 'text' },
+  pennyRelationship: { name: 'pennyRelationship', pretty: 'Penny hearts', type: 'text' },
+  samRelationship: { name: 'samRelationship', pretty: 'Sam hearts', type: 'text' },
+  sebastianRelationship: { name: 'sebastianRelationship', pretty: 'Sebastian hearts', type: 'text' },
 }
 
 const villagers = [

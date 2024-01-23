@@ -17,8 +17,8 @@
       <v-container>
         <v-row no-gutters>
           <v-col cols="12" v-for="(item, idx) in data.options?.flags ?? []" :key="idx">
-            <v-text-field density="compact" v-if="item.type === 'text'" :label="item.name" v-model="stateStore.flags[item.name]"></v-text-field>
-            <v-checkbox density="compact" v-if="item.type === 'checkbox'" :label="item.name" v-model="stateStore.flags[item.name]"></v-checkbox>
+            <v-text-field density="compact" v-if="item.type === 'text'" :label="item.pretty" v-model="stateStore.flags[item.name]"></v-text-field>
+            <v-checkbox density="compact" v-if="item.type === 'checkbox'" :label="item.pretty" v-model="stateStore.flags[item.name]"></v-checkbox>
           </v-col>
         </v-row>
       </v-container>
@@ -36,7 +36,7 @@ const { data } = defineProps<{
     name: string,
     prettyName: string,
     options?: {
-      flags?: { name: string, type: string }[],
+      flags?: { name: string, pretty: string, type: string }[],
     }
   }
 }>();

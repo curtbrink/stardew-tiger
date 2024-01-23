@@ -1,11 +1,11 @@
 <template>
   <v-app-bar class="pl-5 title-bar">
-    <b>STARDEW-TIGER</b>
+    <b>WHERE IN THE FUCK</b>
     <template v-slot:append>
       <v-container class="fill-width">
         <v-row>
-          <v-col cols="3">
-            This is cool!
+          <v-col cols="12">
+            ...are these goddamn villagers
           </v-col>
         </v-row>
       </v-container>
