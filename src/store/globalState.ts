@@ -5,6 +5,7 @@ import browserStorageService from '@/services/browser-storage.service';
 
 type Flags = {
   [key: string]: number | boolean,
+  communityCenterRestored: boolean,
   haleyRelationship: number,
   leahRelationship: number,
 }
@@ -32,6 +33,7 @@ export const useGlobalGameStateStore = defineStore('globalState', {
     dayOfWeek: 0,
     marriedTo: 'single',
     flags: {
+      communityCenterRestored: false,
       haleyRelationship: 0,
       leahRelationship: 0,
     } as Flags,

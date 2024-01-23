@@ -14,19 +14,26 @@ const villagers = [
     name: 'alex',
     prettyName: 'Alex',
     options: {
-      flags: ['haleyRelationship'],
+      flags: [{ name: 'haleyRelationship', type: 'text' }],
     },
   },
   {
     name: 'elliott',
     prettyName: 'Elliott',
     options: {
-      flags: ['leahRelationship'],
+      flags: [{ name: 'leahRelationship', type: 'text' }],
     },
   },
   {
     name: 'harvey',
     prettyName: 'Harvey',
-  }
+  },
+  {
+    name: 'sam',
+    prettyName: 'Sam',
+    options: {
+      flags: [{ name: 'communityCenterRestored', type: 'checkbox' }],
+    },
+  },
 ];
 </script>
