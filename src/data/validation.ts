@@ -21,6 +21,26 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
     }
   }
 
+  // ensure conditions make sense
+  for (const schedule of schedules) {
+    for (const condition of schedule.conditions ?? []) {
+      switch (condition.type) {
+        case 'weather':
+          if (!condition.weather) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          break;
+        case 'date':
+          if (condition.date === undefined || condition.date < 1 || condition.date > 28) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          break;
+        case 'dayOfWeek':
+          if (condition.dayOfWeek === undefined || condition.dayOfWeek < 0 || condition.dayOfWeek > 6) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          break;
+        case 'flag':
+          if (!condition.flagName || !condition.flagCheck || condition.flagValue === undefined) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          break;
+      }
+    }
+  }
+
   // ensure at least one default with no conditions
   const filtered = schedules.filter((it) => !it.conditions);
   if (filtered.length === 0) {

@@ -21,6 +21,10 @@ const flagOptions = {
 
 const villagers = [
   {
+    name: 'abigail',
+    prettyName: 'Abigail',
+  },
+  {
     name: 'alex',
     prettyName: 'Alex',
     options: {
@@ -32,6 +36,13 @@ const villagers = [
     prettyName: 'Elliott',
     options: {
       flags: [flagOptions.leahRelationship],
+    },
+  },
+  {
+    name: 'emily',
+    prettyName: 'Emily',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
     },
   },
   {

@@ -62,7 +62,7 @@ const shaneSpring: Schedule[] = [
     conditions: [
       {
         type: 'dayOfWeek',
-        date: 6,
+        dayOfWeek: 6,
       },
       {
         type: 'weather',
