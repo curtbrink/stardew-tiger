@@ -9,19 +9,29 @@
 <script lang="ts" setup>
 import VillagerCard from '@/components/villager-card.vue';
 
+const flagOptions = {
+  communityCenterRestored: { name: 'communityCenterRestored', type: 'checkbox' },
+  railroadOpen: { name: 'railroadOpen', type: 'checkbox' },
+  haleyRelationship: { name: 'haleyRelationship', type: 'text' },
+  leahRelationship: { name: 'leahRelationship', type: 'text' },
+  pennyRelationship: { name: 'pennyRelationship', type: 'text' },
+  samRelationship: { name: 'samRelationship', type: 'text' },
+  sebastianRelationship: { name: 'sebastianRelationship', type: 'text' },
+}
+
 const villagers = [
   {
     name: 'alex',
     prettyName: 'Alex',
     options: {
-      flags: [{ name: 'haleyRelationship', type: 'text' }],
+      flags: [flagOptions.haleyRelationship],
     },
   },
   {
     name: 'elliott',
     prettyName: 'Elliott',
     options: {
-      flags: [{ name: 'leahRelationship', type: 'text' }],
+      flags: [flagOptions.leahRelationship],
     },
   },
   {
@@ -33,9 +43,9 @@ const villagers = [
     prettyName: 'Sam',
     options: {
       flags: [
-        { name: 'samRelationship', type: 'text' },
-        { name: 'pennyRelationship', type: 'text' },
-        { name: 'communityCenterRestored', type: 'checkbox' },
+        flagOptions.samRelationship,
+        flagOptions.pennyRelationship,
+        flagOptions.communityCenterRestored,
       ],
     },
   },
@@ -44,9 +54,16 @@ const villagers = [
     prettyName: 'Sebastian',
     options: {
       flags: [
-        { name: 'sebastianRelationship', type: 'text' },
-        { name: 'railroadOpen', type: 'checkbox' },
+        flagOptions.sebastianRelationship,
+        flagOptions.railroadOpen,
       ],
+    },
+  },
+  {
+    name: 'shane',
+    prettyName: 'Shane',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
     },
   },
 ];
