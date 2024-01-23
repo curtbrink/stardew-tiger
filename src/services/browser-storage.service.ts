@@ -1,34 +1,22 @@
 const COOKIE_NAMES = {
-  Auth: 'tradeTigerAuthToken',
-  SelectedShip: 'tradeTigerShipId',
+  GameStateData: 'gameStateData',
 };
 
 export default {
-  // Authentication
-  setAuthToken(token: string) {
-    return localStorage.setItem(COOKIE_NAMES.Auth, token);
+  // persist game data across refreshes
+  setGameState(gameState: any) {
+    const stringified = JSON.stringify(gameState);
+    return localStorage.setItem(COOKIE_NAMES.GameStateData, stringified);
   },
-  getAuthToken() {
-    return localStorage.getItem(COOKIE_NAMES.Auth);
-  },
-  hasAuthToken() {
-    return !!this.getAuthToken();
-  },
-  clearAuthToken() {
-    localStorage.removeItem(COOKIE_NAMES.Auth);
-  },
-
-  // Persisting selected ship
-  setSelectedShip(shipId: string) {
-    return localStorage.setItem(COOKIE_NAMES.SelectedShip, shipId);
-  },
-  getSelectedShip() {
-    return localStorage.getItem(COOKIE_NAMES.SelectedShip);
-  },
-  hasSelectedShip() {
-    return !!this.getSelectedShip();
-  },
-  clearSelectedShip() {
-    localStorage.removeItem(COOKIE_NAMES.SelectedShip);
+  getGameState() {
+    const value = localStorage.getItem(COOKIE_NAMES.GameStateData);
+    if (!value) {
+      return undefined;
+    }
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      return undefined;
+    }
   },
 };

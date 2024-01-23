@@ -3,7 +3,7 @@
     <v-main>
       <AppBar />
       <NavDrawer />
-      <v-container fill-height fluid>
+      <v-container fluid>
         <suspense>
           <router-view />
         </suspense>
@@ -16,9 +16,19 @@
 import NavDrawer from '@/components/shared/NavDrawer.vue';
 import { onBeforeMount } from 'vue';
 import AppBar from '@/components/shared/AppBar.vue';
+import { useScheduleStore } from '@/store/schedule';
+import { useGlobalGameStateStore } from '@/store/globalState';
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
   document.title = 'Stardew Tiger';
+
+  const scheduleStore = useScheduleStore();
+  await scheduleStore.init();
+
+  console.log('attempting load from browser');
+  const globalStateStore = useGlobalGameStateStore();
+  await globalStateStore.loadStateFromBrowser();
+  console.log('loaded from browser');
 });
 </script>
 
