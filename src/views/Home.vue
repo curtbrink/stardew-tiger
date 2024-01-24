@@ -58,6 +58,10 @@ const villagers = [
     prettyName: 'Harvey',
   },
   {
+    name: 'leah',
+    prettyName: 'Leah',
+  },
+  {
     name: 'sam',
     prettyName: 'Sam',
     options: {
