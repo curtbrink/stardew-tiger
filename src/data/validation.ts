@@ -36,8 +36,11 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
         case 'date':
           if (
             condition.date === undefined ||
-            condition.date < 1 ||
-            condition.date > 28
+            (Array.isArray(condition.date) &&
+              (condition.date.length === 0 ||
+                condition.date.some((d) => d < 1 || d > 28))) ||
+            (typeof condition.date === 'number' &&
+              (condition.date < 1 || condition.date > 28))
           )
             throw new Error(`Invalid condition for schedule ${schedule.desc}`);
           break;

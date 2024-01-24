@@ -1,0 +1,34 @@
+ORDER OF PRIORITY FOR SCHEDULES IN JSONS
+
+1. [blocks] Explicit season dates
+-> "Spring_16"
+
+2. Date and heart values
+-> "26_6"
+
+3. [blocks] Explicit date
+-> "24"
+
+4. bus
+
+5. rain and rain2 (50/50 chance on these!)
+
+6. Season weekday heart values
+-> "spring_Mon_4"
+
+7. [blocks] Season weekday
+-> "winter_Tue"
+
+8. [blocks] Weekday
+-> "Mon"
+
+9. [blocks] Season
+-> "summer"
+
+10. [blocks] Fallback to spring of current weekday
+-> "spring_Tue" for any season Tuesday
+
+11. [blocks] Fallback to spring schedule
+-> "spring" for any season
+
+12. [blocks] "noschedule"

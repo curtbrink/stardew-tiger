@@ -102,6 +102,13 @@ const villagers = [
     prettyName: 'Maru',
   },
   {
+    name: 'penny',
+    prettyName: 'Penny',
+    options: {
+      flags: [flagOptions.pennyRelationship, flagOptions.samRelationship],
+    },
+  },
+  {
     name: 'sam',
     prettyName: 'Sam',
     options: {

@@ -42,7 +42,15 @@ export const useScheduleStore = defineStore('schedule', {
                 }
                 break;
               case 'date':
-                if (condition.date !== stateStore.date) {
+                if (
+                  Array.isArray(condition.date) &&
+                  !condition.date.includes(stateStore.date)
+                ) {
+                  allPass = false;
+                } else if (
+                  typeof condition.date === 'number' &&
+                  condition.date !== stateStore.date
+                ) {
                   allPass = false;
                 }
                 break;
