@@ -10,10 +10,14 @@ import haley from '@/data/haley';
 import leah from '@/data/leah';
 import maru from '@/data/maru';
 import penny from '@/data/penny';
+import caroline from '@/data/caroline';
+import clint from '@/data/clint';
 
 export default [
   ...abigail,
   ...alex,
+  ...caroline,
+  ...clint,
   ...elliott,
   ...emily,
   ...haley,

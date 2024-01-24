@@ -69,6 +69,20 @@ const villagers = [
     },
   },
   {
+    name: 'caroline',
+    prettyName: 'Caroline',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
+  {
+    name: 'clint',
+    prettyName: 'Clint',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
+  {
     name: 'elliott',
     prettyName: 'Elliott',
     options: {
