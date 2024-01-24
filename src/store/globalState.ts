@@ -4,50 +4,53 @@ import { Season, Weather } from '@/data/types';
 import browserStorageService from '@/services/browser-storage.service';
 
 type Flags = {
-  [key: string]: number | boolean,
-  communityCenterRestored: boolean,
-  railroadOpen: boolean,
-  alexRelationship: number,
-  haleyRelationship: number,
-  leahRelationship: number,
-  pennyRelationship: number,
-  samRelationship: number,
-  sebastianRelationship: number,
-}
+  [key: string]: number | boolean;
+  communityCenterRestored: boolean;
+  railroadOpen: boolean;
+  saloonGridballRoom: boolean;
+  alexRelationship: number;
+  haleyRelationship: number;
+  leahRelationship: number;
+  pennyRelationship: number;
+  samRelationship: number;
+  sebastianRelationship: number;
+};
 
 type GameState = {
-  hasAttemptedLoad: boolean,
-  timestamp: number,
-  season: Season,
-  date: number,
-  weather: Weather,
-  time: string,
-  dayOfWeek: number,
-  marriedTo: string,
-  flags: Flags,
-}
+  hasAttemptedLoad: boolean;
+  timestamp: number;
+  season: Season;
+  date: number;
+  weather: Weather;
+  time: string;
+  dayOfWeek: number;
+  marriedTo: string;
+  flags: Flags;
+};
 
 export const useGlobalGameStateStore = defineStore('globalState', {
-  state: (): GameState => ({
-    hasAttemptedLoad: false,
-    timestamp: Date.now(),
-    season: 'spring',
-    date: 1,
-    weather: 'sun',
-    time: '6:00 AM',
-    dayOfWeek: 0,
-    marriedTo: 'single',
-    flags: {
-      communityCenterRestored: false,
-      railroadOpen: false,
-      alexRelationship: 0,
-      haleyRelationship: 0,
-      leahRelationship: 0,
-      pennyRelationship: 0,
-      samRelationship: 0,
-      sebastianRelationship: 0,
-    } as Flags,
-  } as GameState),
+  state: (): GameState =>
+    ({
+      hasAttemptedLoad: false,
+      timestamp: Date.now(),
+      season: 'spring',
+      date: 1,
+      weather: 'sun',
+      time: '6:00 AM',
+      dayOfWeek: 0,
+      marriedTo: 'single',
+      flags: {
+        communityCenterRestored: false,
+        railroadOpen: false,
+        saloonGridballRoom: false,
+        alexRelationship: 0,
+        haleyRelationship: 0,
+        leahRelationship: 0,
+        pennyRelationship: 0,
+        samRelationship: 0,
+        sebastianRelationship: 0,
+      } as Flags,
+    } as GameState),
   getters: {
     getFlagValue(state: GameState) {
       return (flagName: string) => state.flags[flagName];
@@ -57,10 +60,19 @@ export const useGlobalGameStateStore = defineStore('globalState', {
     },
     browserLoadAttempted(state: GameState) {
       return state.hasAttemptedLoad;
-    }
+    },
   },
   actions: {
-    async setGlobalGameState(newState: { season: Season, date: number, weather: Weather, time: string, marriedTo: string }, newFlags?: Flags) {
+    async setGlobalGameState(
+      newState: {
+        season: Season;
+        date: number;
+        weather: Weather;
+        time: string;
+        marriedTo: string;
+      },
+      newFlags?: Flags,
+    ) {
       this.season = newState.season;
       this.date = newState.date;
       this.weather = newState.weather;
@@ -79,7 +91,16 @@ export const useGlobalGameStateStore = defineStore('globalState', {
     async loadStateFromBrowser() {
       const loaded = browserStorageService.getGameState();
       if (loaded) {
-        await this.setGlobalGameState({ season: loaded.season, date: loaded.date, weather: loaded.weather, time: loaded.time, marriedTo: loaded.marriedTo }, loaded.flags);
+        await this.setGlobalGameState(
+          {
+            season: loaded.season,
+            date: loaded.date,
+            weather: loaded.weather,
+            time: loaded.time,
+            marriedTo: loaded.marriedTo,
+          },
+          loaded.flags,
+        );
       }
       this.hasAttemptedLoad = true;
     },
@@ -93,6 +114,6 @@ export const useGlobalGameStateStore = defineStore('globalState', {
         flags: this.flags,
       };
       browserStorageService.setGameState(saveData);
-    }
+    },
   },
 });

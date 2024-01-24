@@ -8,10 +8,12 @@ const alexSpring: Schedule[] = [
     season: 'spring',
     index: 0,
     desc: 'Alex spring rainy day',
-    conditions: [{
-      type: 'weather',
-      weather: 'rain',
-    }],
+    conditions: [
+      {
+        type: 'weather',
+        weather: 'rain',
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -19,7 +21,7 @@ const alexSpring: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Home'
+        desc: 'Home',
       },
       {
         time: '1:00 PM',
@@ -41,7 +43,7 @@ const alexSpring: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
   {
     villager: 'alex',
@@ -59,7 +61,7 @@ const alexSpring: Schedule[] = [
         flagName: 'haleyRelationship',
         flagCheck: 'lt',
         flagValue: 6,
-      }
+      },
     ],
     steps: [
       {
@@ -68,11 +70,11 @@ const alexSpring: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Outside his house'
+        desc: 'Outside his house',
       },
       {
         time: '12:00 PM',
-        desc: 'At Haley and Emily\'s House',
+        desc: "At Haley and Emily's House",
       },
       {
         time: '4:30 PM',
@@ -90,13 +92,62 @@ const alexSpring: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
   {
     villager: 'alex',
     type: 'seasonal',
     season: 'spring',
     index: 2,
+    desc: 'Alex spring Sunday gridball',
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 6,
+      },
+      {
+        type: 'flag',
+        flagName: 'saloonGridballRoom',
+        flagCheck: 'eq',
+        flagValue: true,
+      },
+    ],
+    steps: [
+      {
+        time: '6:00 AM',
+        desc: 'Home, in his room',
+      },
+      {
+        time: '8:00 AM',
+        desc: 'Outside his house',
+      },
+      {
+        time: '11:00 AM',
+        desc: 'At the Saloon',
+      },
+      {
+        time: '3:00 PM',
+        desc: 'Outside his house',
+      },
+      {
+        time: '6:30 PM',
+        desc: 'Home',
+      },
+      {
+        time: '8:00 PM',
+        desc: 'Home, in his room',
+      },
+      {
+        time: '10:00 PM',
+        desc: 'Home, in bed',
+      },
+    ],
+  },
+  {
+    villager: 'alex',
+    type: 'seasonal',
+    season: 'spring',
+    index: 3,
     desc: 'Alex spring default',
     steps: [
       {
@@ -105,7 +156,7 @@ const alexSpring: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Outside his house'
+        desc: 'Outside his house',
       },
       {
         time: '1:00 PM',
@@ -127,7 +178,7 @@ const alexSpring: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
 ];
 

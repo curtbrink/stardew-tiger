@@ -24,6 +24,11 @@ const flagOptions = {
     pretty: 'Railroad open?',
     type: 'checkbox',
   },
+  saloonGridballRoom: {
+    name: 'saloonGridballRoom',
+    pretty: 'Saloon gridball room?',
+    type: 'checkbox',
+  },
   alexRelationship: {
     name: 'alexRelationship',
     pretty: 'Alex hearts',
@@ -65,7 +70,7 @@ const villagers = [
     name: 'alex',
     prettyName: 'Alex',
     options: {
-      flags: [flagOptions.haleyRelationship],
+      flags: [flagOptions.saloonGridballRoom, flagOptions.haleyRelationship],
     },
   },
   {
