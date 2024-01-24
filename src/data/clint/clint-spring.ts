@@ -14,6 +14,10 @@ const clintSpring: Schedule[] = [
         weather: 'sun',
       },
       {
+        type: 'dayOfWeek',
+        dayOfWeek: 4,
+      },
+      {
         type: 'flag',
         flagName: 'communityCenterRestored',
         flagCheck: 'eq',

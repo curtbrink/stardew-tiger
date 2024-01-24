@@ -12,12 +12,14 @@ import maru from '@/data/maru';
 import penny from '@/data/penny';
 import caroline from '@/data/caroline';
 import clint from '@/data/clint';
+import demetrius from '@/data/demetrius';
 
 export default [
   ...abigail,
   ...alex,
   ...caroline,
   ...clint,
+  ...demetrius,
   ...elliott,
   ...emily,
   ...haley,
