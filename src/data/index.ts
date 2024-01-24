@@ -13,6 +13,7 @@ import penny from '@/data/penny';
 import caroline from '@/data/caroline';
 import clint from '@/data/clint';
 import demetrius from '@/data/demetrius';
+import evelyn from '@/data/evelyn';
 
 export default [
   ...abigail,
@@ -22,6 +23,7 @@ export default [
   ...demetrius,
   ...elliott,
   ...emily,
+  ...evelyn,
   ...haley,
   ...harvey,
   ...leah,
