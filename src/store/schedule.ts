@@ -14,9 +14,14 @@ export const useScheduleStore = defineStore('schedule', {
         // console.log('finding scheddy for ' + villagerId);
         // console.log('total schedules: ' + this.allSchedules.length);
         const stateStore = useGlobalGameStateStore();
-        const scheduleFilter = stateStore.marriedTo === villagerId
-          ? (s: Schedule) => (s.villager === villagerId && s.type === 'marriage')
-          : (s: Schedule) => (s.villager === villagerId && s.type === 'seasonal' && s.season === stateStore.season);
+        const scheduleFilter =
+          stateStore.marriedTo === villagerId
+            ? (s: Schedule) =>
+                s.villager === villagerId && s.type === 'marriage'
+            : (s: Schedule) =>
+                s.villager === villagerId &&
+                s.type === 'seasonal' &&
+                s.season === stateStore.season;
         const villagerSchedules = state.allSchedules.filter(scheduleFilter);
         // console.log('filtered by season and marriage down to ' + villagerSchedules.length + ' schedules to check');
         // iterate schedules until one matches
@@ -31,23 +36,36 @@ export const useScheduleStore = defineStore('schedule', {
           let allPass = true;
           for (const condition of schedToCheck.conditions ?? []) {
             switch (condition.type) {
-              case "weather":
+              case 'weather':
                 if (condition.weather !== stateStore.weather) {
                   allPass = false;
                 }
                 break;
-              case "date":
+              case 'date':
                 if (condition.date !== stateStore.date) {
                   allPass = false;
                 }
                 break;
-              case "dayOfWeek":
-                if (condition.dayOfWeek !== stateStore.dayOfWeek) {
+              case 'dayOfWeek':
+                // could be array or single
+                if (
+                  Array.isArray(condition.dayOfWeek) &&
+                  !condition.dayOfWeek.includes(stateStore.dayOfWeek)
+                ) {
+                  allPass = false;
+                } else if (
+                  typeof condition.dayOfWeek === 'number' &&
+                  condition.dayOfWeek !== stateStore.dayOfWeek
+                ) {
                   allPass = false;
                 }
                 break;
-              case "flag":
-                if (!condition.flagName || condition.flagValue === undefined || !condition.flagCheck) {
+              case 'flag':
+                if (
+                  !condition.flagName ||
+                  condition.flagValue === undefined ||
+                  !condition.flagCheck
+                ) {
                   allPass = false;
                   break;
                 }
@@ -57,19 +75,19 @@ export const useScheduleStore = defineStore('schedule', {
                 let valCheckPassed = false;
                 switch (condition.flagCheck) {
                   case 'eq':
-                    valCheckPassed = (valToCheck === condition.flagValue);
+                    valCheckPassed = valToCheck === condition.flagValue;
                     break;
                   case 'lt':
-                    valCheckPassed = (valToCheck < condition.flagValue);
+                    valCheckPassed = valToCheck < condition.flagValue;
                     break;
                   case 'lte':
-                    valCheckPassed = (valToCheck <= condition.flagValue);
+                    valCheckPassed = valToCheck <= condition.flagValue;
                     break;
                   case 'gt':
-                    valCheckPassed = (valToCheck > condition.flagValue);
+                    valCheckPassed = valToCheck > condition.flagValue;
                     break;
                   case 'gte':
-                    valCheckPassed = (valToCheck >= condition.flagValue);
+                    valCheckPassed = valToCheck >= condition.flagValue;
                 }
                 if (!valCheckPassed) {
                   allPass = false;
@@ -88,7 +106,9 @@ export const useScheduleStore = defineStore('schedule', {
         // now we iterate time values, updating current step if schedule step exists for that time value, until time value matches current time.
         let currentStep = '';
         for (const time of TimeValues) {
-          const matchedStep = matchedSchedule.steps.find((step) => step.time === time);
+          const matchedStep = matchedSchedule.steps.find(
+            (step) => step.time === time,
+          );
           if (matchedStep) {
             currentStep = matchedStep.desc;
           }
@@ -97,12 +117,12 @@ export const useScheduleStore = defineStore('schedule', {
           }
         }
         return currentStep;
-      }
-    }
+      };
+    },
   },
   actions: {
     async init() {
       this.allSchedules = allSchedules;
-    }
+    },
   },
 });

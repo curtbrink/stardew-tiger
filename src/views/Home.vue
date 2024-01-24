@@ -1,6 +1,10 @@
 <template>
   <v-row justify="center">
-    <v-col cols="2" v-for="(villager, idx) in villagers" :key="idx" height="100%">
+    <v-col
+      cols="2"
+      v-for="(villager, idx) in villagers"
+      :key="idx"
+      height="100%">
       <VillagerCard :data="villager" />
     </v-col>
   </v-row>
@@ -10,15 +14,47 @@
 import VillagerCard from '@/components/villager-card.vue';
 
 const flagOptions = {
-  communityCenterRestored: { name: 'communityCenterRestored', pretty: 'CC restored?', type: 'checkbox' },
-  railroadOpen: { name: 'railroadOpen', pretty: 'Railroad open?', type: 'checkbox' },
-  alexRelationship: { name: 'alexRelationship', pretty: 'Alex hearts', type: 'text' },
-  haleyRelationship: { name: 'haleyRelationship', pretty: 'Haley hearts', type: 'text' },
-  leahRelationship: { name: 'leahRelationship', pretty: 'Leah hearts', type: 'text' },
-  pennyRelationship: { name: 'pennyRelationship', pretty: 'Penny hearts', type: 'text' },
-  samRelationship: { name: 'samRelationship', pretty: 'Sam hearts', type: 'text' },
-  sebastianRelationship: { name: 'sebastianRelationship', pretty: 'Sebastian hearts', type: 'text' },
-}
+  communityCenterRestored: {
+    name: 'communityCenterRestored',
+    pretty: 'CC restored?',
+    type: 'checkbox',
+  },
+  railroadOpen: {
+    name: 'railroadOpen',
+    pretty: 'Railroad open?',
+    type: 'checkbox',
+  },
+  alexRelationship: {
+    name: 'alexRelationship',
+    pretty: 'Alex hearts',
+    type: 'text',
+  },
+  haleyRelationship: {
+    name: 'haleyRelationship',
+    pretty: 'Haley hearts',
+    type: 'text',
+  },
+  leahRelationship: {
+    name: 'leahRelationship',
+    pretty: 'Leah hearts',
+    type: 'text',
+  },
+  pennyRelationship: {
+    name: 'pennyRelationship',
+    pretty: 'Penny hearts',
+    type: 'text',
+  },
+  samRelationship: {
+    name: 'samRelationship',
+    pretty: 'Sam hearts',
+    type: 'text',
+  },
+  sebastianRelationship: {
+    name: 'sebastianRelationship',
+    pretty: 'Sebastian hearts',
+    type: 'text',
+  },
+};
 
 const villagers = [
   {
@@ -62,6 +98,10 @@ const villagers = [
     prettyName: 'Leah',
   },
   {
+    name: 'maru',
+    prettyName: 'Maru',
+  },
+  {
     name: 'sam',
     prettyName: 'Sam',
     options: {
@@ -76,10 +116,7 @@ const villagers = [
     name: 'sebastian',
     prettyName: 'Sebastian',
     options: {
-      flags: [
-        flagOptions.sebastianRelationship,
-        flagOptions.railroadOpen,
-      ],
+      flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
     },
   },
   {

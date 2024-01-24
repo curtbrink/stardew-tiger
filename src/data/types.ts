@@ -5,7 +5,7 @@ export type ScheduleCondition = {
   type: 'weather' | 'date' | 'dayOfWeek' | 'flag',
   weather?: Weather,
   date?: number,
-  dayOfWeek?: number,
+  dayOfWeek?: number | number[],
   flagName?: string,
   flagCheck?: 'gt' | 'gte' | 'eq' | 'lte' | 'lt',
   flagValue?: number | boolean,

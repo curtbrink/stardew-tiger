@@ -8,6 +8,7 @@ import abigail from '@/data/abigail';
 import emily from '@/data/emily';
 import haley from '@/data/haley';
 import leah from '@/data/leah';
+import maru from '@/data/maru';
 
 export default [
   ...abigail,
@@ -17,6 +18,7 @@ export default [
   ...haley,
   ...harvey,
   ...leah,
+  ...maru,
   ...sam,
   ...sebastian,
   ...shane,

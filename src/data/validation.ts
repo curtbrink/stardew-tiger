@@ -7,7 +7,9 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   for (let i = 0; i < maxIndex; i++) {
     const indexed = schedules.filter((it) => it.index === i);
     if (indexed.length !== 1) {
-      throw new Error('Invalid schedules for villager named ' + schedules[0].villager);
+      throw new Error(
+        'Invalid schedules for villager named ' + schedules[0].villager,
+      );
     }
   }
 
@@ -16,7 +18,9 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   for (const schedule of schedules) {
     for (const step of schedule.steps) {
       if (!step.time.match(regex)) {
-        throw new Error(`Invalid timestamp ${step.time} for schedule ${schedule.desc}`);
+        throw new Error(
+          `Invalid timestamp ${step.time} for schedule ${schedule.desc}`,
+        );
       }
     }
   }
@@ -26,16 +30,36 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
     for (const condition of schedule.conditions ?? []) {
       switch (condition.type) {
         case 'weather':
-          if (!condition.weather) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          if (!condition.weather)
+            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
           break;
         case 'date':
-          if (condition.date === undefined || condition.date < 1 || condition.date > 28) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          if (
+            condition.date === undefined ||
+            condition.date < 1 ||
+            condition.date > 28
+          )
+            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
           break;
         case 'dayOfWeek':
-          if (condition.dayOfWeek === undefined || condition.dayOfWeek < 0 || condition.dayOfWeek > 6) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          if (
+            condition.dayOfWeek === undefined ||
+            (Array.isArray(condition.dayOfWeek) &&
+              (condition.dayOfWeek.length === 0 ||
+                condition.dayOfWeek.some((d) => d < 0 || d > 6))) ||
+            (typeof condition.dayOfWeek === 'number' &&
+              (condition.dayOfWeek < 0 || condition.dayOfWeek > 6))
+          ) {
+            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          }
           break;
         case 'flag':
-          if (!condition.flagName || !condition.flagCheck || condition.flagValue === undefined) throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          if (
+            !condition.flagName ||
+            !condition.flagCheck ||
+            condition.flagValue === undefined
+          )
+            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
           break;
       }
     }
@@ -44,8 +68,12 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   // ensure at least one default with no conditions
   const filtered = schedules.filter((it) => !it.conditions);
   if (filtered.length === 0) {
-    throw new Error(`No default ${schedules[0].season} schedule found for ${schedules[0].villager}`);
+    throw new Error(
+      `No default ${schedules[0].season} schedule found for ${schedules[0].villager}`,
+    );
   }
 
-  console.log(`Successfully validated ${schedules[0].season} schedules for ${schedules[0].villager}`);
-}
+  console.log(
+    `Successfully validated ${schedules[0].season} schedules for ${schedules[0].villager}`,
+  );
+};
