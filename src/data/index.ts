@@ -14,6 +14,7 @@ import caroline from '@/data/caroline';
 import clint from '@/data/clint';
 import demetrius from '@/data/demetrius';
 import evelyn from '@/data/evelyn';
+import george from '@/data/george';
 
 export default [
   ...abigail,
@@ -24,6 +25,7 @@ export default [
   ...elliott,
   ...emily,
   ...evelyn,
+  ...george,
   ...haley,
   ...harvey,
   ...leah,
