@@ -99,10 +99,10 @@ const villagers = [
       flags: [flagOptions.communityCenterRestored],
     },
   },
-  // {
-  //   name: 'demetrius',
-  //   prettyName: 'Demetrius',
-  // },
+  {
+    name: 'demetrius',
+    prettyName: 'Demetrius',
+  },
   // {
   //   name: 'elliott',
   //   prettyName: 'Elliott',
