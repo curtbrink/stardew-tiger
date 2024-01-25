@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const gusSpring: Schedule[] = [
   {
@@ -153,5 +153,5 @@ const gusSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(gusSpring);
+validateVillagerLevelSchedules(gusSpring);
 export default gusSpring;

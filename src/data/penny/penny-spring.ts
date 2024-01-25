@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const pennySpring: Schedule[] = [
   {
@@ -228,5 +228,5 @@ const pennySpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(pennySpring);
+validateVillagerLevelSchedules(pennySpring);
 export default pennySpring;

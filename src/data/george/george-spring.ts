@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const georgeSpring: Schedule[] = [
   {
@@ -167,5 +167,5 @@ const georgeSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(georgeSpring);
+validateVillagerLevelSchedules(georgeSpring);
 export default georgeSpring;

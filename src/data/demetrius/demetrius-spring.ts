@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const demetriusSpring: Schedule[] = [
   {
@@ -99,5 +99,5 @@ const demetriusSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(demetriusSpring);
+validateVillagerLevelSchedules(demetriusSpring);
 export default demetriusSpring;

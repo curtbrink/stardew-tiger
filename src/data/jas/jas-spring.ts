@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const jasSpring: Schedule[] = [
   {
@@ -181,5 +181,5 @@ const jasSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(jasSpring);
+validateVillagerLevelSchedules(jasSpring);
 export default jasSpring;

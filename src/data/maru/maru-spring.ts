@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const maruSpring: Schedule[] = [
   {
@@ -134,5 +134,5 @@ const maruSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(maruSpring);
+validateVillagerLevelSchedules(maruSpring);
 export default maruSpring;

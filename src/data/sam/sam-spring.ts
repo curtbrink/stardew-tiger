@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const samSpring: Schedule[] = [
   {
@@ -37,7 +37,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '4:00 PM',
-        desc: 'Outside Emily and Haley\'s house',
+        desc: "Outside Emily and Haley's house",
       },
       {
         time: '7:00 PM',
@@ -84,7 +84,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '4:00 PM',
-        desc: 'Outside Emily and Haley\'s house',
+        desc: "Outside Emily and Haley's house",
       },
       {
         time: '7:00 PM',
@@ -131,12 +131,12 @@ const samSpring: Schedule[] = [
       },
       {
         time: '7:40 PM',
-        desc: 'Home, in his room'
+        desc: 'Home, in his room',
       },
       {
         time: '8:00 PM',
-        desc: 'Home, in bed'
-      }
+        desc: 'Home, in bed',
+      },
     ],
   },
   {
@@ -155,7 +155,7 @@ const samSpring: Schedule[] = [
         flagName: 'communityCenterRestored',
         flagCheck: 'eq',
         flagValue: true,
-      }
+      },
     ],
     steps: [
       {
@@ -192,7 +192,7 @@ const samSpring: Schedule[] = [
         flagName: 'communityCenterRestored',
         flagCheck: 'eq',
         flagValue: true,
-      }
+      },
     ],
     steps: [
       {
@@ -281,10 +281,12 @@ const samSpring: Schedule[] = [
     season: 'spring',
     index: 7,
     desc: 'Sam spring Tuesday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 1,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 1,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -292,7 +294,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '2:00 PM',
-        desc: 'Outside the Mayor\'s house',
+        desc: "Outside the Mayor's house",
       },
       {
         time: '6:30 PM',
@@ -300,8 +302,8 @@ const samSpring: Schedule[] = [
       },
       {
         time: '9:00 PM',
-        desc: 'Home, in bed'
-      }
+        desc: 'Home, in bed',
+      },
     ],
   },
   {
@@ -310,10 +312,12 @@ const samSpring: Schedule[] = [
     season: 'spring',
     index: 8,
     desc: 'Sam spring Thursday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 3,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 3,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -321,7 +325,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '1:40 PM',
-        desc: 'Outside the Mayor\'s house',
+        desc: "Outside the Mayor's house",
       },
       {
         time: '6:30 PM',
@@ -329,8 +333,8 @@ const samSpring: Schedule[] = [
       },
       {
         time: '9:00 PM',
-        desc: 'Home, in bed'
-      }
+        desc: 'Home, in bed',
+      },
     ],
   },
   {
@@ -383,7 +387,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Outside Haley and Emily\'s house',
+        desc: "Outside Haley and Emily's house",
       },
       {
         time: '12:30 PM',
@@ -395,8 +399,8 @@ const samSpring: Schedule[] = [
       },
       {
         time: '7:40 PM',
-        desc: 'Home, in bed'
-      }
+        desc: 'Home, in bed',
+      },
     ],
   },
   {
@@ -412,7 +416,7 @@ const samSpring: Schedule[] = [
       },
       {
         time: '1:40 PM',
-        desc: 'Outside the Mayor\'s house',
+        desc: "Outside the Mayor's house",
       },
       {
         time: '6:30 PM',
@@ -426,5 +430,5 @@ const samSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(samSpring);
+validateVillagerLevelSchedules(samSpring);
 export default samSpring;

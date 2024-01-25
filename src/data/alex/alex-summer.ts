@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const alexSummer: Schedule[] = [
   {
@@ -8,10 +8,12 @@ const alexSummer: Schedule[] = [
     season: 'summer',
     index: 0,
     desc: 'Alex clinic day',
-    conditions: [{
-      type: 'date',
-      date: 16,
-    }],
+    conditions: [
+      {
+        type: 'date',
+        date: 16,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -19,7 +21,7 @@ const alexSummer: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Outside his house'
+        desc: 'Outside his house',
       },
       {
         time: '10:30 AM',
@@ -37,7 +39,7 @@ const alexSummer: Schedule[] = [
         time: '12:00 AM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
   {
     villager: 'alex',
@@ -45,10 +47,12 @@ const alexSummer: Schedule[] = [
     season: 'summer',
     index: 1,
     desc: 'Alex summer rainy day',
-    conditions: [{
-      type: 'weather',
-      weather: 'rain',
-    }],
+    conditions: [
+      {
+        type: 'weather',
+        weather: 'rain',
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -56,7 +60,7 @@ const alexSummer: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Home'
+        desc: 'Home',
       },
       {
         time: '1:00 PM',
@@ -78,7 +82,7 @@ const alexSummer: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
   {
     villager: 'alex',
@@ -96,7 +100,7 @@ const alexSummer: Schedule[] = [
         flagName: 'haleyRelationship',
         flagCheck: 'lt',
         flagValue: 6,
-      }
+      },
     ],
     steps: [
       {
@@ -105,11 +109,11 @@ const alexSummer: Schedule[] = [
       },
       {
         time: '8:00 AM',
-        desc: 'Outside his house'
+        desc: 'Outside his house',
       },
       {
         time: '12:00 PM',
-        desc: 'At Haley and Emily\'s House',
+        desc: "At Haley and Emily's House",
       },
       {
         time: '4:30 PM',
@@ -127,7 +131,7 @@ const alexSummer: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
   {
     villager: 'alex',
@@ -142,7 +146,7 @@ const alexSummer: Schedule[] = [
       },
       {
         time: '7:50 AM',
-        desc: 'At the beach'
+        desc: 'At the beach',
       },
       {
         time: '12:00 PM',
@@ -164,9 +168,9 @@ const alexSummer: Schedule[] = [
         time: '10:00 PM',
         desc: 'Home, in bed',
       },
-    ]
+    ],
   },
 ];
 
-validateSeasonalLevelSchedules(alexSummer);
+validateVillagerLevelSchedules(alexSummer);
 export default alexSummer;

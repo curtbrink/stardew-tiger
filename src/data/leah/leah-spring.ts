@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const leahSpring: Schedule[] = [
   {
@@ -12,7 +12,7 @@ const leahSpring: Schedule[] = [
       {
         type: 'date',
         date: 16,
-      }
+      },
     ],
     steps: [
       {
@@ -137,7 +137,7 @@ const leahSpring: Schedule[] = [
       },
       {
         time: '11:00 AM',
-        desc: 'At Pierre\'s General Store',
+        desc: "At Pierre's General Store",
       },
       {
         time: '5:00 PM',
@@ -146,7 +146,7 @@ const leahSpring: Schedule[] = [
       {
         time: '12:00 AM',
         desc: 'Home, in bed',
-      }
+      },
     ],
   },
   {
@@ -180,5 +180,5 @@ const leahSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(leahSpring);
+validateVillagerLevelSchedules(leahSpring);
 export default leahSpring;

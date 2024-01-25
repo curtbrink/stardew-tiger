@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const jodiSpring: Schedule[] = [
   {
@@ -365,5 +365,5 @@ const jodiSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(jodiSpring);
+validateVillagerLevelSchedules(jodiSpring);
 export default jodiSpring;

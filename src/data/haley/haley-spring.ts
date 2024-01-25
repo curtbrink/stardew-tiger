@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const haleySpring: Schedule[] = [
   {
@@ -8,10 +8,12 @@ const haleySpring: Schedule[] = [
     season: 'spring',
     index: 0,
     desc: 'Haley spring rainy day',
-    conditions: [{
-      type: 'weather',
-      weather: 'rain',
-    }],
+    conditions: [
+      {
+        type: 'weather',
+        weather: 'rain',
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -41,10 +43,12 @@ const haleySpring: Schedule[] = [
     season: 'spring',
     index: 1,
     desc: 'Haley spring Monday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 0,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 0,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -56,7 +60,7 @@ const haleySpring: Schedule[] = [
       },
       {
         time: '11:00 AM',
-        desc: 'Outside Marnie\'s Ranch',
+        desc: "Outside Marnie's Ranch",
       },
       {
         time: '4:30 PM',
@@ -106,7 +110,7 @@ const haleySpring: Schedule[] = [
       {
         time: '10:30 PM',
         desc: 'Home, in bed',
-      }
+      },
     ],
   },
   {
@@ -140,5 +144,5 @@ const haleySpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(haleySpring);
+validateVillagerLevelSchedules(haleySpring);
 export default haleySpring;

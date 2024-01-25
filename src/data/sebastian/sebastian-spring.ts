@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const sebastianSpring: Schedule[] = [
   {
@@ -187,7 +187,7 @@ const sebastianSpring: Schedule[] = [
       },
       {
         time: '9:10 PM',
-        desc: 'Home, in bed'
+        desc: 'Home, in bed',
       },
     ],
   },
@@ -207,7 +207,7 @@ const sebastianSpring: Schedule[] = [
         flagName: 'railroadOpen',
         flagCheck: 'eq',
         flagValue: true,
-      }
+      },
     ],
     steps: [
       {
@@ -270,15 +270,15 @@ const sebastianSpring: Schedule[] = [
       },
       {
         time: '9:00 AM',
-        desc: 'Outside Haley and Emily\'s house',
+        desc: "Outside Haley and Emily's house",
       },
       {
         time: '12:30 PM',
-        desc: 'At Sam\'s house in Sam\'s room',
+        desc: "At Sam's house in Sam's room",
       },
       {
         time: '6:00 PM',
-        desc: 'Outside Sam\'s house',
+        desc: "Outside Sam's house",
       },
       {
         time: '7:30 PM',
@@ -317,5 +317,5 @@ const sebastianSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(sebastianSpring);
+validateVillagerLevelSchedules(sebastianSpring);
 export default sebastianSpring;

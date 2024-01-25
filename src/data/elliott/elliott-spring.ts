@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const elliottSpring: Schedule[] = [
   {
@@ -8,10 +8,12 @@ const elliottSpring: Schedule[] = [
     season: 'spring',
     index: 0,
     desc: 'Elliott spring rainy day',
-    conditions: [{
-      type: 'weather',
-      weather: 'rain',
-    }],
+    conditions: [
+      {
+        type: 'weather',
+        weather: 'rain',
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -25,10 +27,12 @@ const elliottSpring: Schedule[] = [
     season: 'spring',
     index: 1,
     desc: 'Elliott spring Thursday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 3,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 3,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -36,7 +40,7 @@ const elliottSpring: Schedule[] = [
       },
       {
         time: '11:30 AM',
-        desc: 'At Pierre\'s General Store',
+        desc: "At Pierre's General Store",
       },
       {
         time: '5:30 PM',
@@ -60,7 +64,7 @@ const elliottSpring: Schedule[] = [
         flagName: 'leahRelationship',
         flagCheck: 'lt',
         flagValue: 6,
-      }
+      },
     ],
     steps: [
       {
@@ -69,7 +73,7 @@ const elliottSpring: Schedule[] = [
       },
       {
         time: '12:00 PM',
-        desc: 'On the pier near Willy\'s',
+        desc: "On the pier near Willy's",
       },
       {
         time: '5:00 PM',
@@ -97,7 +101,7 @@ const elliottSpring: Schedule[] = [
         flagName: 'leahRelationship',
         flagCheck: 'lt',
         flagValue: 6,
-      }
+      },
     ],
     steps: [
       {
@@ -106,7 +110,7 @@ const elliottSpring: Schedule[] = [
       },
       {
         time: '12:00 PM',
-        desc: 'On the pier near Willy\'s',
+        desc: "On the pier near Willy's",
       },
       {
         time: '5:00 PM',
@@ -149,5 +153,5 @@ const elliottSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(elliottSpring);
+validateVillagerLevelSchedules(elliottSpring);
 export default elliottSpring;

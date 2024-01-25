@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const kentSpring: Schedule[] = [
   {
@@ -203,5 +203,5 @@ const kentSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(kentSpring);
+validateVillagerLevelSchedules(kentSpring);
 export default kentSpring;

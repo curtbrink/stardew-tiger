@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const evelynSpring: Schedule[] = [
   {
@@ -179,5 +179,5 @@ const evelynSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(evelynSpring);
+validateVillagerLevelSchedules(evelynSpring);
 export default evelynSpring;

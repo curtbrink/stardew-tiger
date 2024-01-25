@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const clintSpring: Schedule[] = [
   {
@@ -74,5 +74,5 @@ const clintSpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(clintSpring);
+validateVillagerLevelSchedules(clintSpring);
 export default clintSpring;

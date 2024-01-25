@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 // shane is fucking throwing wrenches into this and it was hard to wrap my head around the logic for some reason
 // shane attempts to work M-F or if it's Sat/Sun and raining
@@ -41,7 +41,7 @@ const shaneSpring: Schedule[] = [
       },
       {
         time: '12:00 PM',
-        desc: 'At Pierre\'s General Store',
+        desc: "At Pierre's General Store",
       },
       {
         time: '5:00 PM',
@@ -158,11 +158,11 @@ const shaneSpring: Schedule[] = [
       },
       {
         time: '11:00 PM',
-        desc: 'Home, in bed'
+        desc: 'Home, in bed',
       },
     ],
   },
 ];
 
-validateSeasonalLevelSchedules(shaneSpring);
+validateVillagerLevelSchedules(shaneSpring);
 export default shaneSpring;

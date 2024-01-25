@@ -1,6 +1,6 @@
 import { Schedule } from '@/data/types';
 
-export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
+export const validateVillagerLevelSchedules = (schedules: Schedule[]) => {
   // find maximum index
   const maxIndex = Math.max(...schedules.map((it) => it.index));
   // ensure one of each index up to max

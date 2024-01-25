@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const abigail: Schedule[] = [
   {
@@ -553,5 +553,5 @@ const abigail: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(abigail);
+validateVillagerLevelSchedules(abigail);
 export default abigail;

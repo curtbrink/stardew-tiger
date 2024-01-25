@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const emilySpring: Schedule[] = [
   {
@@ -12,7 +12,7 @@ const emilySpring: Schedule[] = [
       {
         type: 'weather',
         weather: 'rain',
-      }
+      },
     ],
     steps: [
       {
@@ -52,7 +52,7 @@ const emilySpring: Schedule[] = [
       },
       {
         time: '10:00 AM',
-        desc: 'At Pierre\'s General Store',
+        desc: "At Pierre's General Store",
       },
       {
         time: '4:00 PM',
@@ -128,5 +128,5 @@ const emilySpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(emilySpring);
+validateVillagerLevelSchedules(emilySpring);
 export default emilySpring;

@@ -1,5 +1,5 @@
 import { Schedule } from '@/data/types';
-import { validateSeasonalLevelSchedules } from '@/data/validation';
+import { validateVillagerLevelSchedules } from '@/data/validation';
 
 const harveySpring: Schedule[] = [
   {
@@ -8,10 +8,12 @@ const harveySpring: Schedule[] = [
     season: 'spring',
     index: 0,
     desc: 'Harvey spring rainy day',
-    conditions: [{
-      type: 'weather',
-      weather: 'rain',
-    }],
+    conditions: [
+      {
+        type: 'weather',
+        weather: 'rain',
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -41,10 +43,12 @@ const harveySpring: Schedule[] = [
     season: 'spring',
     index: 1,
     desc: 'Harvey spring Tuesday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 1,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 1,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -60,8 +64,8 @@ const harveySpring: Schedule[] = [
       },
       {
         time: '11:00 PM',
-        desc: 'At the clinic, in bed'
-      }
+        desc: 'At the clinic, in bed',
+      },
     ],
   },
   {
@@ -70,10 +74,12 @@ const harveySpring: Schedule[] = [
     season: 'spring',
     index: 2,
     desc: 'Harvey spring Thursday',
-    conditions: [{
-      type: 'dayOfWeek',
-      dayOfWeek: 3,
-    }],
+    conditions: [
+      {
+        type: 'dayOfWeek',
+        dayOfWeek: 3,
+      },
+    ],
     steps: [
       {
         time: '6:00 AM',
@@ -89,8 +95,8 @@ const harveySpring: Schedule[] = [
       },
       {
         time: '11:00 PM',
-        desc: 'At the clinic, in bed'
-      }
+        desc: 'At the clinic, in bed',
+      },
     ],
   },
   {
@@ -116,7 +122,7 @@ const harveySpring: Schedule[] = [
       },
       {
         time: '12:00 PM',
-        desc: 'At Pierre\'s General Store',
+        desc: "At Pierre's General Store",
       },
       {
         time: '3:00 PM',
@@ -125,7 +131,7 @@ const harveySpring: Schedule[] = [
       {
         time: '10:00 PM',
         desc: 'At the clinic, in bed',
-      }
+      },
     ],
   },
   {
@@ -194,5 +200,5 @@ const harveySpring: Schedule[] = [
   },
 ];
 
-validateSeasonalLevelSchedules(harveySpring);
+validateVillagerLevelSchedules(harveySpring);
 export default harveySpring;
