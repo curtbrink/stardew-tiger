@@ -17,6 +17,7 @@ import evelyn from '@/data/evelyn';
 import george from '@/data/george';
 import gus from '@/data/gus';
 import jas from '@/data/jas';
+import jodi from '@/data/jodi';
 
 export default [
   ...abigail,
@@ -32,6 +33,7 @@ export default [
   ...haley,
   ...harvey,
   ...jas,
+  ...jodi,
   ...leah,
   ...maru,
   ...penny,
