@@ -78,13 +78,13 @@ const villagers = [
       ],
     },
   },
-  // {
-  //   name: 'alex',
-  //   prettyName: 'Alex',
-  //   options: {
-  //     flags: [flagOptions.saloonGridballRoom, flagOptions.haleyRelationship],
-  //   },
-  // },
+  {
+    name: 'alex',
+    prettyName: 'Alex',
+    options: {
+      flags: [flagOptions.haleyRelationship, flagOptions.saloonGridballRoom],
+    },
+  },
   // {
   //   name: 'caroline',
   //   prettyName: 'Caroline',
