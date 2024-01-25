@@ -16,6 +16,7 @@ import demetrius from '@/data/demetrius';
 import evelyn from '@/data/evelyn';
 import george from '@/data/george';
 import gus from '@/data/gus';
+import jas from '@/data/jas';
 
 export default [
   ...abigail,
@@ -30,6 +31,7 @@ export default [
   ...gus,
   ...haley,
   ...harvey,
+  ...jas,
   ...leah,
   ...maru,
   ...penny,

@@ -141,6 +141,13 @@ const villagers = [
     prettyName: 'Harvey',
   },
   {
+    name: 'jas',
+    prettyName: 'Jas',
+    options: {
+      flagOptions: [flagOptions.pennyRelationship, flagOptions.samRelationship],
+    },
+  },
+  {
     name: 'leah',
     prettyName: 'Leah',
   },
