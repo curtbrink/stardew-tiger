@@ -155,6 +155,13 @@ const villagers = [
     },
   },
   {
+    name: 'kent',
+    prettyName: 'Kent',
+    options: {
+      flagOptions: [flagOptions.saloonGridballRoom],
+    },
+  },
+  {
     name: 'leah',
     prettyName: 'Leah',
   },
