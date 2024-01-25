@@ -2,7 +2,8 @@ export type Season = 'spring' | 'summer' | 'fall' | 'winter';
 export type Weather = 'sun' | 'rain';
 
 export type ScheduleCondition = {
-  type: 'weather' | 'date' | 'dayOfWeek' | 'flag';
+  type: 'weather' | 'date' | 'dayOfWeek' | 'flag' | 'season';
+  season?: Season;
   weather?: Weather;
   date?: number | number[];
   dayOfWeek?: number | number[];
@@ -20,10 +21,10 @@ export type Schedule = {
   villager: string;
   index: number;
   desc: string;
-  type: 'seasonal' | 'marriage';
-  season?: Season;
+  isMarriage?: boolean;
   conditions?: ScheduleCondition[];
-  steps: ScheduleStep[];
+  steps?: ScheduleStep[];
+  goto?: number;
 };
 
 const minuteVals = ['00', '10', '20', '30', '40', '50'];

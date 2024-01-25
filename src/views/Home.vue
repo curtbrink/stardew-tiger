@@ -29,6 +29,11 @@ const flagOptions = {
     pretty: 'Saloon gridball room?',
     type: 'checkbox',
   },
+  abigailRelationship: {
+    name: 'abigailRelationship',
+    pretty: 'Abigail hearts',
+    type: 'text',
+  },
   alexRelationship: {
     name: 'alexRelationship',
     pretty: 'Alex hearts',
@@ -65,141 +70,148 @@ const villagers = [
   {
     name: 'abigail',
     prettyName: 'Abigail',
-  },
-  {
-    name: 'alex',
-    prettyName: 'Alex',
-    options: {
-      flags: [flagOptions.saloonGridballRoom, flagOptions.haleyRelationship],
-    },
-  },
-  {
-    name: 'caroline',
-    prettyName: 'Caroline',
-    options: {
-      flags: [flagOptions.communityCenterRestored],
-    },
-  },
-  {
-    name: 'clint',
-    prettyName: 'Clint',
-    options: {
-      flags: [flagOptions.communityCenterRestored],
-    },
-  },
-  {
-    name: 'demetrius',
-    prettyName: 'Demetrius',
-  },
-  {
-    name: 'elliott',
-    prettyName: 'Elliott',
-    options: {
-      flags: [flagOptions.leahRelationship],
-    },
-  },
-  {
-    name: 'emily',
-    prettyName: 'Emily',
-    options: {
-      flags: [flagOptions.communityCenterRestored],
-    },
-  },
-  {
-    name: 'evelyn',
-    prettyName: 'Evelyn',
-    options: {
-      flags: [flagOptions.communityCenterRestored],
-    },
-  },
-  {
-    name: 'george',
-    prettyName: 'George',
-    options: {
-      flags: [flagOptions.saloonGridballRoom],
-    },
-  },
-  {
-    name: 'gus',
-    prettyName: 'Gus',
     options: {
       flags: [
-        flagOptions.communityCenterRestored,
-        flagOptions.saloonGridballRoom,
+        flagOptions.abigailRelationship,
+        flagOptions.sebastianRelationship,
+        flagOptions.railroadOpen,
       ],
     },
   },
-  {
-    name: 'haley',
-    prettyName: 'Haley',
-    options: {
-      flags: [flagOptions.alexRelationship],
-    },
-  },
-  {
-    name: 'harvey',
-    prettyName: 'Harvey',
-  },
-  {
-    name: 'jas',
-    prettyName: 'Jas',
-    options: {
-      flagOptions: [flagOptions.pennyRelationship, flagOptions.samRelationship],
-    },
-  },
-  {
-    name: 'jodi',
-    prettyName: 'Jodi',
-    options: {
-      flagOptions: [flagOptions.communityCenterRestored],
-    },
-  },
-  {
-    name: 'kent',
-    prettyName: 'Kent',
-    options: {
-      flagOptions: [flagOptions.saloonGridballRoom],
-    },
-  },
-  {
-    name: 'leah',
-    prettyName: 'Leah',
-  },
-  {
-    name: 'maru',
-    prettyName: 'Maru',
-  },
-  {
-    name: 'penny',
-    prettyName: 'Penny',
-    options: {
-      flags: [flagOptions.pennyRelationship, flagOptions.samRelationship],
-    },
-  },
-  {
-    name: 'sam',
-    prettyName: 'Sam',
-    options: {
-      flags: [
-        flagOptions.samRelationship,
-        flagOptions.pennyRelationship,
-        flagOptions.communityCenterRestored,
-      ],
-    },
-  },
-  {
-    name: 'sebastian',
-    prettyName: 'Sebastian',
-    options: {
-      flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
-    },
-  },
-  {
-    name: 'shane',
-    prettyName: 'Shane',
-    options: {
-      flags: [flagOptions.communityCenterRestored],
-    },
-  },
+  // {
+  //   name: 'alex',
+  //   prettyName: 'Alex',
+  //   options: {
+  //     flags: [flagOptions.saloonGridballRoom, flagOptions.haleyRelationship],
+  //   },
+  // },
+  // {
+  //   name: 'caroline',
+  //   prettyName: 'Caroline',
+  //   options: {
+  //     flags: [flagOptions.communityCenterRestored],
+  //   },
+  // },
+  // {
+  //   name: 'clint',
+  //   prettyName: 'Clint',
+  //   options: {
+  //     flags: [flagOptions.communityCenterRestored],
+  //   },
+  // },
+  // {
+  //   name: 'demetrius',
+  //   prettyName: 'Demetrius',
+  // },
+  // {
+  //   name: 'elliott',
+  //   prettyName: 'Elliott',
+  //   options: {
+  //     flags: [flagOptions.leahRelationship],
+  //   },
+  // },
+  // {
+  //   name: 'emily',
+  //   prettyName: 'Emily',
+  //   options: {
+  //     flags: [flagOptions.communityCenterRestored],
+  //   },
+  // },
+  // {
+  //   name: 'evelyn',
+  //   prettyName: 'Evelyn',
+  //   options: {
+  //     flags: [flagOptions.communityCenterRestored],
+  //   },
+  // },
+  // {
+  //   name: 'george',
+  //   prettyName: 'George',
+  //   options: {
+  //     flags: [flagOptions.saloonGridballRoom],
+  //   },
+  // },
+  // {
+  //   name: 'gus',
+  //   prettyName: 'Gus',
+  //   options: {
+  //     flags: [
+  //       flagOptions.communityCenterRestored,
+  //       flagOptions.saloonGridballRoom,
+  //     ],
+  //   },
+  // },
+  // {
+  //   name: 'haley',
+  //   prettyName: 'Haley',
+  //   options: {
+  //     flags: [flagOptions.alexRelationship],
+  //   },
+  // },
+  // {
+  //   name: 'harvey',
+  //   prettyName: 'Harvey',
+  // },
+  // {
+  //   name: 'jas',
+  //   prettyName: 'Jas',
+  //   options: {
+  //     flagOptions: [flagOptions.pennyRelationship, flagOptions.samRelationship],
+  //   },
+  // },
+  // {
+  //   name: 'jodi',
+  //   prettyName: 'Jodi',
+  //   options: {
+  //     flagOptions: [flagOptions.communityCenterRestored],
+  //   },
+  // },
+  // {
+  //   name: 'kent',
+  //   prettyName: 'Kent',
+  //   options: {
+  //     flagOptions: [flagOptions.saloonGridballRoom],
+  //   },
+  // },
+  // {
+  //   name: 'leah',
+  //   prettyName: 'Leah',
+  // },
+  // {
+  //   name: 'maru',
+  //   prettyName: 'Maru',
+  // },
+  // {
+  //   name: 'penny',
+  //   prettyName: 'Penny',
+  //   options: {
+  //     flags: [flagOptions.pennyRelationship, flagOptions.samRelationship],
+  //   },
+  // },
+  // {
+  //   name: 'sam',
+  //   prettyName: 'Sam',
+  //   options: {
+  //     flags: [
+  //       flagOptions.samRelationship,
+  //       flagOptions.pennyRelationship,
+  //       flagOptions.communityCenterRestored,
+  //     ],
+  //   },
+  // },
+  // {
+  //   name: 'sebastian',
+  //   prettyName: 'Sebastian',
+  //   options: {
+  //     flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
+  //   },
+  // },
+  // {
+  //   name: 'shane',
+  //   prettyName: 'Shane',
+  //   options: {
+  //     flags: [flagOptions.communityCenterRestored],
+  //   },
+  // },
 ];
 </script>

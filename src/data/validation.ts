@@ -16,7 +16,7 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   // ensure all steps of all schedules have correctly formatted time
   const regex = /[1-9][0-9]*:[0-5]0\s[PA]M/g;
   for (const schedule of schedules) {
-    for (const step of schedule.steps) {
+    for (const step of schedule.steps ?? []) {
       if (!step.time.match(regex)) {
         throw new Error(
           `Invalid timestamp ${step.time} for schedule ${schedule.desc}`,
@@ -26,12 +26,18 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   }
 
   // ensure conditions make sense
+  const errorMsg = (sched: Schedule) =>
+    `Invalid condition for schedule ${sched.desc}`;
   for (const schedule of schedules) {
     for (const condition of schedule.conditions ?? []) {
       switch (condition.type) {
+        case 'season':
+          if (!condition.season) {
+            throw new Error(errorMsg(schedule));
+          }
+          break;
         case 'weather':
-          if (!condition.weather)
-            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+          if (!condition.weather) throw new Error(errorMsg(schedule));
           break;
         case 'date':
           if (
@@ -42,7 +48,7 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
             (typeof condition.date === 'number' &&
               (condition.date < 1 || condition.date > 28))
           )
-            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+            throw new Error(errorMsg(schedule));
           break;
         case 'dayOfWeek':
           if (
@@ -53,7 +59,7 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
             (typeof condition.dayOfWeek === 'number' &&
               (condition.dayOfWeek < 0 || condition.dayOfWeek > 6))
           ) {
-            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+            throw new Error(errorMsg(schedule));
           }
           break;
         case 'flag':
@@ -62,7 +68,7 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
             !condition.flagCheck ||
             condition.flagValue === undefined
           )
-            throw new Error(`Invalid condition for schedule ${schedule.desc}`);
+            throw new Error(errorMsg(schedule));
           break;
       }
     }
@@ -71,12 +77,17 @@ export const validateSeasonalLevelSchedules = (schedules: Schedule[]) => {
   // ensure at least one default with no conditions
   const filtered = schedules.filter((it) => !it.conditions);
   if (filtered.length === 0) {
-    throw new Error(
-      `No default ${schedules[0].season} schedule found for ${schedules[0].villager}`,
-    );
+    throw new Error(`No default schedule found for ${schedules[0].villager}`);
   }
 
-  console.log(
-    `Successfully validated ${schedules[0].season} schedules for ${schedules[0].villager}`,
-  );
+  // ensure gotos are valid
+  const filteredGotos = schedules.filter((it) => it.goto !== undefined);
+  for (const schedule of filteredGotos) {
+    const gotoSchedule = schedules.find((it) => it.index === schedule.goto);
+    if (!gotoSchedule) {
+      throw new Error(`Schedule ${schedule.desc} has an invalid GOTO`);
+    }
+  }
+
+  console.log(`Successfully validated schedules for ${schedules[0].villager}`);
 };

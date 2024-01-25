@@ -14,28 +14,37 @@ export const useScheduleStore = defineStore('schedule', {
         // console.log('finding scheddy for ' + villagerId);
         // console.log('total schedules: ' + this.allSchedules.length);
         const stateStore = useGlobalGameStateStore();
-        const scheduleFilter =
+
+        const initialFilter =
           stateStore.marriedTo === villagerId
             ? (s: Schedule) =>
-                s.villager === villagerId && s.type === 'marriage'
+                s.villager === villagerId && s.isMarriage === true
             : (s: Schedule) =>
-                s.villager === villagerId &&
-                s.type === 'seasonal' &&
-                s.season === stateStore.season;
-        const villagerSchedules = state.allSchedules.filter(scheduleFilter);
-        // console.log('filtered by season and marriage down to ' + villagerSchedules.length + ' schedules to check');
+                s.villager === villagerId && s.isMarriage !== true;
+
+        const villagerSchedules = state.allSchedules.filter(initialFilter);
+
         // iterate schedules until one matches
-        let i = 0;
-        let matchedSchedule;
+        let i = Math.min(...villagerSchedules.map((it) => it.index));
+        let matchedSchedule: Schedule | undefined;
         while (!matchedSchedule) {
           const schedToCheck = villagerSchedules.find((s) => s.index === i);
           if (!schedToCheck) {
+            // either we ran out of schedules somehow, or this is a default-marriage-schedule situation
+            if (stateStore.marriedTo === villagerId) {
+              return 'On the farm';
+            }
             throw new Error('no schedule found, is there an index gap?');
           }
           // check each condition
           let allPass = true;
           for (const condition of schedToCheck.conditions ?? []) {
             switch (condition.type) {
+              case 'season':
+                if (condition.season !== stateStore.season) {
+                  allPass = false;
+                }
+                break;
               case 'weather':
                 if (condition.weather !== stateStore.weather) {
                   allPass = false;
@@ -110,11 +119,35 @@ export const useScheduleStore = defineStore('schedule', {
           i++;
         }
 
+        // at this point, we've found a valid schedule and there are two possibilities assuming valid data:
+        // 1. it has a goto pointing at a different schedule, which...
+        // 2. it has steps defined
+        let scheduleToStep: Schedule | undefined;
+        if (matchedSchedule.goto) {
+          scheduleToStep = villagerSchedules.find(
+            (it) => it.index === matchedSchedule!.goto,
+          );
+        } else {
+          scheduleToStep = matchedSchedule;
+        }
+
+        if (!scheduleToStep) {
+          throw new Error(`Invalid goto for index ${matchedSchedule.goto}`);
+        }
+
+        if (scheduleToStep.goto) {
+          throw new Error("multiple goto layers aren't supported lol");
+        }
+
+        if (!scheduleToStep.steps) {
+          throw new Error("schedule doesn't have any steps!");
+        }
+
         // at this point, we have the right schedule for the current day and game state.
         // now we iterate time values, updating current step if schedule step exists for that time value, until time value matches current time.
         let currentStep = '';
         for (const time of TimeValues) {
-          const matchedStep = matchedSchedule.steps.find(
+          const matchedStep = scheduleToStep.steps.find(
             (step) => step.time === time,
           );
           if (matchedStep) {

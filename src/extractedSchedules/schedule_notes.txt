@@ -1,15 +1,24 @@
+random notes:
+failed NOT checks default to 'spring', NOT the appropriate seasonal schedule. seems like a bug
+
 ORDER OF PRIORITY FOR SCHEDULES IN JSONS
 
-1. [blocks] Explicit season dates
--> "Spring_16"
+0.5. Married NPC days
+-> "marriage_Mon"
 
-2. Date and heart values
+0.6. Married default schedule (same for everyone? just sticking at the farm?)
+(yup, this implies that the other specific schedules (like clinic appts) no longer apply at all)
+
+1. [blocks] Explicit season dates
+-> "spring_16"
+
+2. Monthly date and heart values
 -> "26_6"
 
-3. [blocks] Explicit date
+3. [blocks] Explicit monthly date
 -> "24"
 
-4. bus
+4. bus (for Pam)
 
 5. rain and rain2 (50/50 chance on these!)
 
