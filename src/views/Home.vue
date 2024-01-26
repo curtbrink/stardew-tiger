@@ -164,13 +164,13 @@ const villagers = [
     name: 'jas',
     prettyName: 'Jas',
   },
-  // {
-  //   name: 'jodi',
-  //   prettyName: 'Jodi',
-  //   options: {
-  //     flagOptions: [flagOptions.communityCenterRestored],
-  //   },
-  // },
+  {
+    name: 'jodi',
+    prettyName: 'Jodi',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
   // {
   //   name: 'kent',
   //   prettyName: 'Kent',
