@@ -149,13 +149,13 @@ const villagers = [
       ],
     },
   },
-  // {
-  //   name: 'haley',
-  //   prettyName: 'Haley',
-  //   options: {
-  //     flags: [flagOptions.alexRelationship],
-  //   },
-  // },
+  {
+    name: 'haley',
+    prettyName: 'Haley',
+    options: {
+      flags: [flagOptions.alexRelationship],
+    },
+  },
   // {
   //   name: 'harvey',
   //   prettyName: 'Harvey',
