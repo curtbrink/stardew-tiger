@@ -34,6 +34,11 @@ const flagOptions = {
     pretty: 'Saloon gridball room?',
     type: 'checkbox',
   },
+  beachBridgeRepaired: {
+    name: 'beachBridgeRepaired',
+    pretty: 'Beach bridge repaired?',
+    type: 'checkbox',
+  },
   abigailRelationship: {
     name: 'abigailRelationship',
     pretty: 'Abigail hearts',
@@ -178,10 +183,13 @@ const villagers = [
       flags: [flagOptions.saloonGridballRoom],
     },
   },
-  // {
-  //   name: 'leah',
-  //   prettyName: 'Leah',
-  // },
+  {
+    name: 'leah',
+    prettyName: 'Leah',
+    options: {
+      flags: [flagOptions.beachBridgeRepaired],
+    },
+  },
   // {
   //   name: 'maru',
   //   prettyName: 'Maru',
