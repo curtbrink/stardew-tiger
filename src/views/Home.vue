@@ -171,13 +171,13 @@ const villagers = [
       flags: [flagOptions.communityCenterRestored],
     },
   },
-  // {
-  //   name: 'kent',
-  //   prettyName: 'Kent',
-  //   options: {
-  //     flagOptions: [flagOptions.saloonGridballRoom],
-  //   },
-  // },
+  {
+    name: 'kent',
+    prettyName: 'Kent',
+    options: {
+      flags: [flagOptions.saloonGridballRoom],
+    },
+  },
   // {
   //   name: 'leah',
   //   prettyName: 'Leah',
