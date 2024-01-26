@@ -41,7 +41,15 @@ export const useScheduleStore = defineStore('schedule', {
           for (const condition of schedToCheck.conditions ?? []) {
             switch (condition.type) {
               case 'season':
-                if (condition.season !== stateStore.season) {
+                if (
+                  Array.isArray(condition.season) &&
+                  !condition.season.includes(stateStore.season)
+                ) {
+                  allPass = false;
+                } else if (
+                  typeof condition.season === 'string' &&
+                  condition.season !== stateStore.season
+                ) {
                   allPass = false;
                 }
                 break;

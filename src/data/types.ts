@@ -3,7 +3,7 @@ export type Weather = 'sun' | 'rain';
 
 export type ScheduleCondition = {
   type: 'weather' | 'date' | 'dayOfWeek' | 'flag' | 'season';
-  season?: Season;
+  season?: Season | Season[];
   weather?: Weather;
   date?: number | number[];
   dayOfWeek?: number | number[];

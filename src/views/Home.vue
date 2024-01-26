@@ -103,13 +103,13 @@ const villagers = [
     name: 'demetrius',
     prettyName: 'Demetrius',
   },
-  // {
-  //   name: 'elliott',
-  //   prettyName: 'Elliott',
-  //   options: {
-  //     flags: [flagOptions.leahRelationship],
-  //   },
-  // },
+  {
+    name: 'elliott',
+    prettyName: 'Elliott',
+    options: {
+      flags: [flagOptions.leahRelationship],
+    },
+  },
   // {
   //   name: 'emily',
   //   prettyName: 'Emily',
