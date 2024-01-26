@@ -156,10 +156,10 @@ const villagers = [
       flags: [flagOptions.alexRelationship],
     },
   },
-  // {
-  //   name: 'harvey',
-  //   prettyName: 'Harvey',
-  // },
+  {
+    name: 'harvey',
+    prettyName: 'Harvey',
+  },
   // {
   //   name: 'jas',
   //   prettyName: 'Jas',
