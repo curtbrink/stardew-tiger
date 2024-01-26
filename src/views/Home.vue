@@ -132,13 +132,13 @@ const villagers = [
       flags: [flagOptions.communityCenterRestored],
     },
   },
-  // {
-  //   name: 'george',
-  //   prettyName: 'George',
-  //   options: {
-  //     flags: [flagOptions.saloonGridballRoom],
-  //   },
-  // },
+  {
+    name: 'george',
+    prettyName: 'George',
+    options: {
+      flags: [flagOptions.saloonGridballRoom],
+    },
+  },
   // {
   //   name: 'gus',
   //   prettyName: 'Gus',
