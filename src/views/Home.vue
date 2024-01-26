@@ -231,6 +231,13 @@ const villagers = [
       flags: [flagOptions.communityCenterRestored],
     },
   },
+  {
+    name: 'pam',
+    prettyName: 'Pam',
+    options: {
+      flags: [flagOptions.busServiceRestored],
+    },
+  },
   // {
   //   name: 'penny',
   //   prettyName: 'Penny',

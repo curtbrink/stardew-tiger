@@ -23,6 +23,7 @@ import leo from '@/data/leo';
 import lewis from '@/data/lewis';
 import linus from '@/data/linus';
 import marnie from '@/data/marnie';
+import pam from '@/data/pam';
 
 export default [
   ...abigail,
@@ -46,6 +47,7 @@ export default [
   ...linus,
   ...marnie,
   ...maru,
+  ...pam,
   ...penny,
   ...sam,
   ...sebastian,
