@@ -119,7 +119,7 @@ const emily: Schedule[] = [
       },
       {
         time: '8:30 AM',
-        desc: "On the pier near Willy's",
+        desc: 'At the beach, on the pier',
       },
       {
         time: '1:00 PM',

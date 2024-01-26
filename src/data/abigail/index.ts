@@ -312,7 +312,7 @@ const abigail: Schedule[] = [
       },
       {
         time: '11:00 AM',
-        desc: "On the pier near Willy's",
+        desc: 'At the beach, on the pier',
       },
       {
         time: '6:00 PM',

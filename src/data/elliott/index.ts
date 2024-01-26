@@ -179,7 +179,7 @@ const elliott: Schedule[] = [
       },
       {
         time: '12:00 PM',
-        desc: "On the pier near Willy's",
+        desc: 'At the beach, on the pier',
       },
       {
         time: '5:00 PM',

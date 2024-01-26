@@ -20,6 +20,7 @@ import jas from '@/data/jas';
 import jodi from '@/data/jodi';
 import kent from '@/data/kent';
 import leo from '@/data/leo';
+import lewis from '@/data/lewis';
 
 export default [
   ...abigail,
@@ -39,6 +40,7 @@ export default [
   ...kent,
   ...leah,
   ...leo,
+  ...lewis,
   ...maru,
   ...penny,
   ...sam,

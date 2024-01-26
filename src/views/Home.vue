@@ -202,6 +202,13 @@ const villagers = [
       flags: [flagOptions.leoRelationship],
     },
   },
+  {
+    name: 'lewis',
+    prettyName: 'Lewis',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
   // {
   //   name: 'maru',
   //   prettyName: 'Maru',
