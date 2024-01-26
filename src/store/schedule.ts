@@ -95,7 +95,12 @@ export const useScheduleStore = defineStore('schedule', {
                   break;
                 }
                 // eslint-disable-next-line no-case-declarations
-                const valToCheck = stateStore.flags[condition.flagName!];
+                let valToCheck = stateStore.flags[condition.flagName!];
+                if (valToCheck === undefined) {
+                  // if flag hasn't been set for some reason, ensure we aren't comparing to null
+                  valToCheck =
+                    typeof condition.flagValue === 'boolean' ? false : 0;
+                }
                 // eslint-disable-next-line no-case-declarations
                 let valCheckPassed = false;
                 switch (condition.flagCheck) {

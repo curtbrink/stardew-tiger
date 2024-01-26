@@ -59,6 +59,11 @@ const flagOptions = {
     pretty: 'Leah hearts',
     type: 'text',
   },
+  leoRelationship: {
+    name: 'leoRelationship',
+    pretty: 'Leo hearts',
+    type: 'text',
+  },
   pennyRelationship: {
     name: 'pennyRelationship',
     pretty: 'Penny hearts',
@@ -188,6 +193,13 @@ const villagers = [
     prettyName: 'Leah',
     options: {
       flags: [flagOptions.beachBridgeRepaired],
+    },
+  },
+  {
+    name: 'leo',
+    prettyName: 'Leo',
+    options: {
+      flags: [flagOptions.leoRelationship],
     },
   },
   // {

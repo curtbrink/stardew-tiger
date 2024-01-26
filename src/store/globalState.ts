@@ -14,6 +14,7 @@ type Flags = {
   alexRelationship: number;
   haleyRelationship: number;
   leahRelationship: number;
+  leoRelationship: number;
   pennyRelationship: number;
   samRelationship: number;
   sebastianRelationship: number;
@@ -52,6 +53,7 @@ export const useGlobalGameStateStore = defineStore('globalState', {
         alexRelationship: 0,
         haleyRelationship: 0,
         leahRelationship: 0,
+        leoRelationship: 0,
         pennyRelationship: 0,
         samRelationship: 0,
         sebastianRelationship: 0,
