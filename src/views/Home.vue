@@ -253,6 +253,13 @@ const villagers = [
     name: 'pierre',
     prettyName: 'Pierre',
   },
+  {
+    name: 'robin',
+    prettyName: 'Robin',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
   // {
   //   name: 'sam',
   //   prettyName: 'Sam',
