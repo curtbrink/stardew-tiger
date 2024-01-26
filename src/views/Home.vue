@@ -125,13 +125,13 @@ const villagers = [
       ],
     },
   },
-  // {
-  //   name: 'evelyn',
-  //   prettyName: 'Evelyn',
-  //   options: {
-  //     flags: [flagOptions.communityCenterRestored],
-  //   },
-  // },
+  {
+    name: 'evelyn',
+    prettyName: 'Evelyn',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
   // {
   //   name: 'george',
   //   prettyName: 'George',
