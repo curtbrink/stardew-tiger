@@ -249,6 +249,10 @@ const villagers = [
       ],
     },
   },
+  {
+    name: 'pierre',
+    prettyName: 'Pierre',
+  },
   // {
   //   name: 'sam',
   //   prettyName: 'Sam',
