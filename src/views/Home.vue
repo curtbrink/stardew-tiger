@@ -238,13 +238,17 @@ const villagers = [
       flags: [flagOptions.busServiceRestored],
     },
   },
-  // {
-  //   name: 'penny',
-  //   prettyName: 'Penny',
-  //   options: {
-  //     flags: [flagOptions.pennyRelationship, flagOptions.samRelationship],
-  //   },
-  // },
+  {
+    name: 'penny',
+    prettyName: 'Penny',
+    options: {
+      flags: [
+        flagOptions.pennyRelationship,
+        flagOptions.samRelationship,
+        flagOptions.communityCenterRestored,
+      ],
+    },
+  },
   // {
   //   name: 'sam',
   //   prettyName: 'Sam',
