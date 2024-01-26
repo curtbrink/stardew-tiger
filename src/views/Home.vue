@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center">
     <v-col
-      cols="2"
+      :cols="cardColumnWidth"
       v-for="(villager, idx) in villagers"
       :key="idx"
       height="100%">
@@ -12,6 +12,13 @@
 
 <script lang="ts" setup>
 import VillagerCard from '@/components/villager-card.vue';
+import { useDisplay } from 'vuetify';
+import { computed } from 'vue';
+
+const { xlAndUp, mdAndUp } = useDisplay();
+const cardColumnWidth = computed(() =>
+  xlAndUp.value ? 2 : mdAndUp.value ? 3 : 4,
+);
 
 const flagOptions = {
   communityCenterRestored: {
@@ -213,10 +220,17 @@ const villagers = [
     name: 'linus',
     prettyName: 'Linus',
   },
-  // {
-  //   name: 'maru',
-  //   prettyName: 'Maru',
-  // },
+  {
+    name: 'marnie',
+    prettyName: 'Marnie',
+  },
+  {
+    name: 'maru',
+    prettyName: 'Maru',
+    options: {
+      flags: [flagOptions.communityCenterRestored],
+    },
+  },
   // {
   //   name: 'penny',
   //   prettyName: 'Penny',
