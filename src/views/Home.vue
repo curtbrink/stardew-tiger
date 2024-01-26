@@ -24,6 +24,11 @@ const flagOptions = {
     pretty: 'Railroad open?',
     type: 'checkbox',
   },
+  busServiceRestored: {
+    name: 'busServiceRestored',
+    pretty: 'Bus service restored?',
+    type: 'checkbox',
+  },
   saloonGridballRoom: {
     name: 'saloonGridballRoom',
     pretty: 'Saloon gridball room?',
@@ -110,13 +115,16 @@ const villagers = [
       flags: [flagOptions.leahRelationship],
     },
   },
-  // {
-  //   name: 'emily',
-  //   prettyName: 'Emily',
-  //   options: {
-  //     flags: [flagOptions.communityCenterRestored],
-  //   },
-  // },
+  {
+    name: 'emily',
+    prettyName: 'Emily',
+    options: {
+      flags: [
+        flagOptions.communityCenterRestored,
+        flagOptions.busServiceRestored,
+      ],
+    },
+  },
   // {
   //   name: 'evelyn',
   //   prettyName: 'Evelyn',

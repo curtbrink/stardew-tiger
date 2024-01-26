@@ -7,6 +7,7 @@ type Flags = {
   [key: string]: number | boolean;
   communityCenterRestored: boolean;
   railroadOpen: boolean;
+  busServiceRestored: boolean;
   saloonGridballRoom: boolean;
   abigailRelationship: number;
   alexRelationship: number;
@@ -43,6 +44,7 @@ export const useGlobalGameStateStore = defineStore('globalState', {
       flags: {
         communityCenterRestored: false,
         railroadOpen: false,
+        busServiceRestored: false,
         saloonGridballRoom: false,
         abigailRelationship: 0,
         alexRelationship: 0,
