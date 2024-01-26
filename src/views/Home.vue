@@ -39,6 +39,11 @@ const flagOptions = {
     pretty: 'Beach bridge repaired?',
     type: 'checkbox',
   },
+  leoMoved: {
+    name: 'leoMoved',
+    pretty: 'Leo moved to mainland?',
+    type: 'checkbox',
+  },
   abigailRelationship: {
     name: 'abigailRelationship',
     pretty: 'Abigail hearts',
@@ -57,11 +62,6 @@ const flagOptions = {
   leahRelationship: {
     name: 'leahRelationship',
     pretty: 'Leah hearts',
-    type: 'text',
-  },
-  leoRelationship: {
-    name: 'leoRelationship',
-    pretty: 'Leo hearts',
     type: 'text',
   },
   pennyRelationship: {
@@ -199,7 +199,7 @@ const villagers = [
     name: 'leo',
     prettyName: 'Leo',
     options: {
-      flags: [flagOptions.leoRelationship],
+      flags: [flagOptions.leoMoved],
     },
   },
   {
@@ -208,6 +208,10 @@ const villagers = [
     options: {
       flags: [flagOptions.communityCenterRestored],
     },
+  },
+  {
+    name: 'linus',
+    prettyName: 'Linus',
   },
   // {
   //   name: 'maru',

@@ -4,12 +4,18 @@ import { Season, Weather } from '@/data/types';
 import browserStorageService from '@/services/browser-storage.service';
 
 type Flags = {
+  // typescripty bit for typey types. heh, typical.
   [key: string]: number | boolean;
+
+  // boolean flags
   communityCenterRestored: boolean;
   railroadOpen: boolean;
   busServiceRestored: boolean;
   saloonGridballRoom: boolean;
   beachBridgeRepaired: boolean;
+  leoMoved: boolean;
+
+  // relationship flags
   abigailRelationship: number;
   alexRelationship: number;
   haleyRelationship: number;
@@ -49,11 +55,11 @@ export const useGlobalGameStateStore = defineStore('globalState', {
         busServiceRestored: false,
         saloonGridballRoom: false,
         beachBridgeRepaired: false,
+        leoMoved: false,
         abigailRelationship: 0,
         alexRelationship: 0,
         haleyRelationship: 0,
         leahRelationship: 0,
-        leoRelationship: 0,
         pennyRelationship: 0,
         samRelationship: 0,
         sebastianRelationship: 0,

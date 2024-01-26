@@ -9,9 +9,9 @@ const leo: Schedule[] = [
     conditions: [
       {
         type: 'flag',
-        flagName: 'leoRelationship',
-        flagCheck: 'lt',
-        flagValue: 6,
+        flagName: 'leoMoved',
+        flagCheck: 'eq',
+        flagValue: false,
       },
       {
         type: 'weather',
@@ -44,9 +44,9 @@ const leo: Schedule[] = [
     conditions: [
       {
         type: 'flag',
-        flagName: 'leoRelationship',
-        flagCheck: 'lt',
-        flagValue: 6,
+        flagName: 'leoMoved',
+        flagCheck: 'eq',
+        flagValue: false,
       },
       {
         type: 'dayOfWeek',
@@ -83,9 +83,9 @@ const leo: Schedule[] = [
     conditions: [
       {
         type: 'flag',
-        flagName: 'leoRelationship',
-        flagCheck: 'lt',
-        flagValue: 6,
+        flagName: 'leoMoved',
+        flagCheck: 'eq',
+        flagValue: false,
       },
       {
         type: 'dayOfWeek',
@@ -122,9 +122,9 @@ const leo: Schedule[] = [
     conditions: [
       {
         type: 'flag',
-        flagName: 'leoRelationship',
-        flagCheck: 'lt',
-        flagValue: 6,
+        flagName: 'leoMoved',
+        flagCheck: 'eq',
+        flagValue: false,
       },
     ],
     steps: [
