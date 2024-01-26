@@ -12,6 +12,10 @@ const alex: Schedule[] = [
         type: 'dayOfWeek',
         dayOfWeek: 0,
       },
+      {
+        type: 'weather',
+        weather: 'sun',
+      },
     ],
     steps: [
       {
@@ -41,6 +45,10 @@ const alex: Schedule[] = [
       {
         type: 'dayOfWeek',
         dayOfWeek: 6,
+      },
+      {
+        type: 'weather',
+        weather: 'sun',
       },
       {
         type: 'flag',

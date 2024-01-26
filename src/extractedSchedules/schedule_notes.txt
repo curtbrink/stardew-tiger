@@ -3,8 +3,18 @@ failed NOT checks default to 'spring', NOT the appropriate seasonal schedule. se
 
 ORDER OF PRIORITY FOR SCHEDULES IN JSONS
 
+0.2. Married NPC explicit dates
+-> "marriage_fall_15"
+
+0.3. Married NPC job schedule
+-> "marriageJob"
+--> applies to: Penny on Tue/Wed/Fri
+                Maru on Tue/Thu
+                Harvey on Tue/Thu
+
 0.5. Married NPC days
 -> "marriage_Mon"
+--> these ONLY APPLY WHEN IT IS NOT RAINING
 
 0.6. Married default schedule (same for everyone? just sticking at the farm?)
 (yup, this implies that the other specific schedules (like clinic appts) no longer apply at all)

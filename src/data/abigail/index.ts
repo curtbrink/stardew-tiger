@@ -12,6 +12,10 @@ const abigail: Schedule[] = [
         type: 'dayOfWeek',
         dayOfWeek: 0,
       },
+      {
+        type: 'weather',
+        weather: 'sun',
+      },
     ],
     steps: [
       {
@@ -49,6 +53,10 @@ const abigail: Schedule[] = [
       {
         type: 'dayOfWeek',
         dayOfWeek: 4,
+      },
+      {
+        type: 'weather',
+        weather: 'sun',
       },
     ],
     steps: [

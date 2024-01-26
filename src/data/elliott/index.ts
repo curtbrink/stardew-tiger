@@ -12,6 +12,10 @@ const elliott: Schedule[] = [
         type: 'dayOfWeek',
         dayOfWeek: 0,
       },
+      {
+        type: 'weather',
+        weather: 'sun',
+      },
     ],
     steps: [
       {
