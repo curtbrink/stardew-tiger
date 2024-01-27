@@ -26,6 +26,7 @@ import marnie from '@/data/marnie';
 import pam from '@/data/pam';
 import pierre from '@/data/pierre';
 import robin from '@/data/robin';
+import sandy from '@/data/sandy';
 
 export default [
   ...abigail,
@@ -54,6 +55,7 @@ export default [
   ...pierre,
   ...robin,
   ...sam,
+  ...sandy,
   ...sebastian,
   ...shane,
 ];

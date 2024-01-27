@@ -271,6 +271,13 @@ const villagers = [
       ],
     },
   },
+  {
+    name: 'sandy',
+    prettyName: 'Sandy',
+    options: {
+      flags: [flagOptions.busServiceRestored],
+    },
+  },
   // {
   //   name: 'sebastian',
   //   prettyName: 'Sebastian',
