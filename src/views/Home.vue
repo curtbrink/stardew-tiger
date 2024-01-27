@@ -260,17 +260,17 @@ const villagers = [
       flags: [flagOptions.communityCenterRestored],
     },
   },
-  // {
-  //   name: 'sam',
-  //   prettyName: 'Sam',
-  //   options: {
-  //     flags: [
-  //       flagOptions.samRelationship,
-  //       flagOptions.pennyRelationship,
-  //       flagOptions.communityCenterRestored,
-  //     ],
-  //   },
-  // },
+  {
+    name: 'sam',
+    prettyName: 'Sam',
+    options: {
+      flags: [
+        flagOptions.samRelationship,
+        flagOptions.pennyRelationship,
+        flagOptions.communityCenterRestored,
+      ],
+    },
+  },
   // {
   //   name: 'sebastian',
   //   prettyName: 'Sebastian',
