@@ -30,7 +30,7 @@ const jodi: Schedule[] = [
         desc: 'At the clinic, waiting',
       },
       {
-        time: '1:30 AM',
+        time: '1:30 PM',
         desc: 'At the clinic, in the exam room',
       },
       {
