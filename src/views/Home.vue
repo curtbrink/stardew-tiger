@@ -278,13 +278,13 @@ const villagers = [
       flags: [flagOptions.busServiceRestored],
     },
   },
-  // {
-  //   name: 'sebastian',
-  //   prettyName: 'Sebastian',
-  //   options: {
-  //     flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
-  //   },
-  // },
+  {
+    name: 'sebastian',
+    prettyName: 'Sebastian',
+    options: {
+      flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
+    },
+  },
   // {
   //   name: 'shane',
   //   prettyName: 'Shane',
