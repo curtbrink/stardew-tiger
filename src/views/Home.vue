@@ -285,12 +285,15 @@ const villagers = [
       flags: [flagOptions.sebastianRelationship, flagOptions.railroadOpen],
     },
   },
-  // {
-  //   name: 'shane',
-  //   prettyName: 'Shane',
-  //   options: {
-  //     flags: [flagOptions.communityCenterRestored],
-  //   },
-  // },
+  {
+    name: 'shane',
+    prettyName: 'Shane',
+    options: {
+      flags: [
+        flagOptions.communityCenterRestored,
+        flagOptions.saloonGridballRoom,
+      ],
+    },
+  },
 ];
 </script>
