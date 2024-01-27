@@ -295,5 +295,13 @@ const villagers = [
       ],
     },
   },
+  {
+    name: 'vincent',
+    prettyName: 'Vincent',
+  },
+  {
+    name: 'willy',
+    prettyName: 'Willy',
+  },
 ];
 </script>
